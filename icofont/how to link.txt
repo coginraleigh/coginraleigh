@@ -1,0 +1,15 @@
+Copy the icofont folder to your project folder.
+In the <head> of your html, reference the location to your icofont.min.css.
+
+<link rel="stylesheet" href="icofont/icofont.min.css">
+
+
+<i class="icofont-dart icofont-1x"></i>
+<i class="icofont-dart icofont-2x"></i>
+<i class="icofont-dart icofont-3x"></i>
+<i class="icofont-dart icofont-4x"></i>
+<i class="icofont-dart icofont-5x"></i>
+
+
+
+view website for more information: https://icofont.com/examples

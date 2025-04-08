@@ -1,0 +1,793 @@
+ @font-face {
+            font-family: myFirstFont;
+            src: url("font/Univers Light Condensed Regular.ttf");
+		}
+
+        * {
+            font-family: myFirstFont;
+		    margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease-in-out;
+			
+			
+        }
+
+      
+.logo {
+	width: 60px;
+}
+header {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding: 5px 5%;
+    position:sticky;
+    top:0;
+    background-color: #FFFFFF;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+	font-size:20px;
+	 width: 100%;
+	padding-bottom:2px; 
+}
+
+
+header img{
+	padding-top:4px;
+}
+
+nav a{
+	color: #222222;
+	padding: 15px;
+	
+}
+nav a:hover{
+	color: #AD2A0C;
+	padding-left: 25px;
+	
+}
+
+.marquee-container {
+            width: 100%;
+            background-color: #AD2A0C;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            padding: 10px 0;
+        }
+        .marquee-text {
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            animation: marquee 13s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateX(170%); }
+            to { transform: translateX(-100%); }
+        }
+
+
+
+
+
+.slanted-section {
+    background-image: url("image/Hero 1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Enables the parallax effect */
+    color: white;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 90%);
+    position: relative;
+    padding: 50px;
+    padding-bottom: 300px;
+
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 110vh; /* Makes it take the full height of the viewport */
+}
+
+
+ 
+        .content {
+         
+           
+            text-align: justify;
+          
+           font-size: 20px;
+            background: white;
+            color: #222;
+        }
+
+.content img{
+
+	width:550px;
+	
+
+}
+
+.row{
+    max-width: 1200px;
+    margin: auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.col{
+    flex:1 1 250px;
+    padding:15px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+.underline {
+    width: 103px;  /* Adjust width as needed */
+    height: 2px;  /* Thickness of the line */
+    background-color: #222;  /* Change color as needed */
+    border: none;
+    
+}
+
+
+.btn1{
+	background-color: #AD2A0C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+	border-radius: 5px;
+
+}
+.btn1:hover{
+	opacity: 80%;
+}
+
+
+
+
+.slanted-section2 {
+            background-image: url("image/Serving God _ Daily Devotional _ Inspiration Ministries.jfif");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Enables the parallax effect */
+            color: #222;
+            padding: 200px 50px; /* Increase padding to make the effect more noticeable */
+            text-align: center;
+     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 90%);
+    font-size: 20px;
+            position: relative;
+		  padding-bottom: 200px;
+        }
+.slanted-section2 h2{
+	color:#FFF;
+}
+
+
+.underline2 {
+    width: 200px;  /* Adjust width as needed */
+    height: 2px;  /* Thickness of the line */
+    background-color: #FFF;  /* Change color as needed */
+    border: none;
+    
+}
+
+
+
+.table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            margin: 10px 70px;
+        }
+        table {
+            width: 100%;
+          
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-right: 1px solid #ddd;
+			color:#222
+        }
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+        th {
+            background-color: #AD2A0C;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        tbody tr:not(:last-child) td {
+            border-bottom: 1px solid #ddd;
+        }
+       
+
+
+ .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-icon::before {
+            content: '\2630'; /* Hamburger icon */
+        }
+        .menu-icon.active::before {
+            content: '\2715'; /* Close icon */
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+             top: 65px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s ease-in-out;
+			z-index:999;
+        }
+        .mobile-nav a {
+            padding: 15px;
+            color: #222;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .mobile-nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #cb4a2a;
+            transition: width 0.3s ease-in-out;
+        }
+        .mobile-nav a:hover::after {
+            width: 100%;
+        }
+        .mobile-nav.active {
+            display: flex;
+            transform: scaleY(1);
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav {
+                display: none !important;
+            }
+        }
+
+
+.slanted-section img{
+	width:50%;
+	
+}
+.team{
+    text-align: center;
+	background-color:#EDEDED;
+}
+.team img{
+	border-radius: 50%;
+	border: solid  5px  #AD2A0C;
+}
+.team .col{
+	transition: .5s;
+}
+.team .col:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+
+
+.team2{
+    text-align: center;
+	background-color:#FFFEEE;
+}
+.team2 img{
+	border-radius: 50%;
+	border: solid  5px  #AD2A0C;
+}
+.team2 .col{
+	transition: .5s;
+}
+.team2 .col:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.title h1{
+	margin-bottom: 2px;
+	padding-top: 40px;
+	font-size: 32px;
+}
+
+
+
+  @media (max-width: 768px){
+.table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            margin: 10px -60px;
+        }
+        table {
+            width: 100%;
+          
+        }
+	  
+	
+	      .marquee-text {
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            animation: marquee 13s linear infinite;
+        }
+     
+	@keyframes marquee {
+            from { transform: translateX(70%); }
+            to { transform: translateX(-100%); }
+        }
+	
+.slanted-section {
+    background-image: url("image/Hero 1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Enables the parallax effect */
+    color: white;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 90%);
+    position: relative;
+    padding: 50px;
+    padding-bottom: 100px;
+
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Makes it take the full height of the viewport */
+}
+  
+	  .slanted-section img{
+		  width:130%;
+		   top:-30;
+	  }
+	  
+	  
+	  
+	  
+	 
+}
+ 
+
+
+@media (max-width: 539px){
+	
+	.content col{
+		
+		justify-content: center;
+		align-items: center;
+	}  
+	
+}
+
+
+.footerl{
+	width:80%;
+}
+
+footer{
+	padding-top:45px;
+	background-color: #232321;
+}
+
+
+  .divideri {
+        width: 2px;
+        height:150px;
+        background-color: #fff;
+        margin: 0 15px;
+    }
+
+@media (min-width: 501px) and (max-width: 572px) {
+    /* Your CSS styles here */
+	
+  .divideri {
+       display:none;
+    }
+	
+	
+	   .footerl {
+        max-width: 680px; /* Adjust logo size as needed */
+        height: auto;
+		 margin-left: 40px;
+		   margin-top: -50px;
+    }
+	
+}
+
+
+
+
+.ch1{
+	color:#fff;
+		font-size:18px;
+}
+
+.ch2{
+	color:#fff;
+	font-size:15px; 
+}
+
+
+footer p{
+	color:#fff;
+}
+
+
+/* Default: Hide HR */
+.mobile-hr {
+    display: none;
+}
+
+@media (max-width: 320px){
+	   .footerl {
+       width:75%;
+    } }
+
+
+@media (max-width: 425px){
+	
+	
+	.slanted-section2 {
+            background-image: url("image/Serving God _ Daily Devotional _ Inspiration Ministries.jfif");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Enables the parallax effect */
+            color: #222;
+            padding: 200px 50px; /* Increase padding to make the effect more noticeable */
+            text-align: center;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+
+    font-size: 20px;
+            position: relative;
+		  padding-bottom: 170px;
+        }
+.slanted-section2 h2{
+	color:#FFF;
+}
+
+}
+
+
+@media (max-width: 500px){
+
+ .divideri {
+	 display:none;
+	}
+	
+	
+	.footer {
+            flex-direction: column;
+        }
+
+        .logo-section {
+            order: 2; /* Moves logo to bottom on mobile */
+        }
+
+        .footer-divider {
+            display: none; /* Hides vertical divider on small screens */
+        }
+	   .footerl {
+        max-width: 680px; /* Adjust logo size as needed */
+        height: auto;
+		 margin-left: 40px;
+		   margin-top: -50px;
+    }
+	
+	   .mobile-hr {
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+    }
+	
+   
+}
+
+
+.raleigh {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Centers the image */
+    padding: 0 20px; /* Adds left and right padding */
+}
+
+
+.slanted-section3 {
+            background-image: url("image/photo-1438232992991-995b7058bbb3.jfif");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Enables the parallax effect */
+            color: #222;
+	margin-top: -100px;
+            padding: 200px 50px; /* Increase padding to make the effect more noticeable */
+            text-align: center;
+clip-path: polygon(0 0, 100% 6%, 100% 100%, 0% 100%);
+
+    font-size: 20px;
+            position: relative;
+		  padding-bottom: 150px;
+}
+
+
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px; /* Left and Right Padding */
+    gap: 15px; /* Space Between Cards */
+}
+
+/* Card Styling */
+.card {
+    flex: 1 1 calc(25% - 15px); /* 4 Cards per Row */
+    max-width: calc(25% - 15px);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) { /* Tablet */
+    .card {
+        flex: 1 1 calc(50% - 15px); /* 2 Cards per Row */
+        max-width: calc(50% - 15px);
+    }
+	 .slanted-section img {
+     width: 100%;
+	
+}
+	}
+
+@media (max-width: 768px) { /* Mobile */
+    .card {
+        flex: 1 1 100%; /* 1 Card per Row */
+        max-width: 100%;
+    }
+}
+
+/* Fullscreen Viewer */
+.fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	 z-index: 9999; /* Super high value */
+
+}
+
+
+
+.fullscreen img {
+    max-width: 100%;
+    max-height: 100%;
+	
+}
+
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    font-size: 55px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+	background-color:#AD2A0C;
+	color: #FFF;
+
+}
+
+
+
+/* Navigation Buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #AD2A0C;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+
+
+@media (max-width: 768px) { /* Mobile */
+	.slanted-section3 {
+            background-image: url("image/photo-1438232992991-995b7058bbb3.jfif");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Enables the parallax effect */
+            color: #222;
+	margin-top: -100px;
+            padding: 100px 50px; /* Increase padding to make the effect more noticeable */
+            text-align: center;
+clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+    font-size: 20px;
+            position: relative;
+		  padding-bottom: 90px;
+}
+
+}
+
+
+
+/* TOP BUTTON CODE */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 95px;
+    right: 22px;
+    display: none; /* Initially hidden */
+    background-color: #AD2A0C;/* Changed background color to blue */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Square with slightly rounded corners */
+    width: 30px;
+    height: 30px;
+    font-size: 6px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 998;
+}
+
+.scroll-to-top .icon {
+    color: white;
+    font-size: 20px;
+}
+
+.scroll-to-top.show {
+    display: flex; /* Show the button */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top.hide {
+    opacity: 0;
+    transform: translateY(100px);
+    pointer-events: none;
+}
+
+/* TOP BUTTON CODE ENDS */
+
+   .contacts {
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        max-width: 500px;
+        margin: auto;
+
+    }
+
+
+@media (max-width: 966px) {
+	
+	.ch1{
+		font-size:16px;
+	}
+	
+	
+	.em{
+		font-size: 12px;
+		 padding: 5px 8px; 
+	}
+	
+	.lm{
+		font-size: 10px;
+		 padding: 5px 8px; 
+	}
+	
+   .contacts {
+	display: flex;
+        justify-content: space-around;
+        width: 85%;
+        max-width: 500px;
+        margin: auto;
+		font-size: 12px;
+	
+}}
+
+.priv{
+	color:#fff;
+	font-size: 13px;
+}
+
+
+.f2{
+	font-size: 14px;
+}
+
+.c1{
+	width:50%;
+	padding:5px;
+	border:2px solid #AD2A0C;
+	border-radius:5px;
+}
+
+.location{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+h1{
+	margin-bottom: 10px;
+}
+iframe{
+	width: 80%;
+	height: 500px;
+}
+.para h2{
+	margin-bottom: 15px;
+}

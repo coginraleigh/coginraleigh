@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Church of God NC</title>
+<link rel="icon" href="image/Logo png 2.png">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="icofont/icofont.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+
+<style>
+	
+
+	
+ 
+    .contact {
+        text-align: center;
+		color:#fff;
+    }
+	
+	
+	    .divider {
+        width: 2px;
+        height: 30px; /* Adjust height as needed */
+        background-color: #fff;
+        margin: 0 15px;
+    }
+	
+	.contact a{
+
+		color:#fff;
+	}
+</style>	
+	
+</head>
+
+<body>
+	
+
+	
+	
+	<header>
+	<a href="#"><img class="logo" src="image/Logo png 2.png" alt=""></a>
+        <nav>
+		<a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#meeting">Meetings</a>
+        <a href="#gal">Gallery</a>
+        <a href="#cont">Contact</a>
+		</nav>
+		
+ <div class="menu-icon" id="menuIcon" onclick="toggleMenu()"></div>
+    </header>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#meeting">Meetings</a>
+        <a href="#gal">Gallery</a>
+        <a href="#cont">Contact</a>
+    </div>
+		
+		
+	  <div class="marquee-container">
+        <div class="marquee-text">Praise the Lord! NORTH CAROLINA ലെ  RALEIGH പട്ടണത്തിൽ ദൈവത്തെ സത്യത്തിലും ആത്മാവിലും ആരാധിപ്പാൻ ഒരു കൂട്ടായ്മ.</div>
+    </div>	
+		
+
+	
+ <section class="slanted-section">
+     <img class="simg1" src="image/Title  3.svg" alt="">
+    </section>
+
+	
+	<section class="content" id="about">
+	
+        <div class="row">
+
+        <div class="col">
+		<h2><b>ABOUT US</b></h2>
+		<hr class="underline"><br>
+        <h3><b>Welcome to Church of God in Raleigh</b></h3><br>
+<p>At <b>Church of God in Raleigh </b>, we are a welcoming community dedicated to spiritual growth, fellowship, and service. Our ministries cater to individuals and families of all ages, offering opportunities to deepen your faith and connect with others.
+We provide <b>Sunday School classes</b>,  led by passionate teachers who share the Word of God, along with dedicated ministries such as <b>Women’s Ministry, and Youth Ministry</b>, to support and encourage every member of our congregation. You are not just a visitor here, you are a family! As you explore our website, we pray that the Holy Spirit uplifts you and fills your heart with peace and blessings. We invite you to join us in worship, share your prayer requests, and experience the love and grace of God. We look forward to connecting with you soon! 
+
+</p>
+<br> <br>
+<a href="mailto:prayers@cograleigh.com " class="btn1">Send Prayer Request</a>
+			
+</div>
+			
+<div class="col"><img class="raleigh" src="image/ab-03.png" alt=""></div>			
+			
+</div>
+</section>	
+	
+	
+	
+ <section class="slanted-section2" id="meeting">
+      	<center><h2><b>MEETING SCHEDULE</b></h2>
+       <hr class="underline2"><br></center>
+	 
+	 <div class="row"> <div class="col">
+   <center> <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table></div>
+   </center> </div> </div>
+
+	 
+    </section>
+	
+		
+ <section class="slanted-section3" id="gal">
+      <div class="card-container">
+		  
+    <div class="card" onclick="openFullscreen('image/Gallery-01.jpg')">
+        <img src="image/Gallery-01.jpg" alt="Image 1">
+		
+    </div>
+		  
+    <div class="card" onclick="openFullscreen('image/Gallery-02.jpg')">
+        <img src="image/Gallery-02.jpg" alt="Image 2">
+		
+    </div>
+		  
+    <div class="card" onclick="openFullscreen('image/Gallery-03.jpg')">
+        <img src="image/Gallery-03.jpg" alt="Image 3">
+		
+    </div>
+		  
+    <div class="card" onclick="openFullscreen('image/Gallery-04.jpg')">
+        <img src="image/Gallery-04.jpg" alt="Image 4">
+		
+    </div>
+</div>
+</section>
+	
+	<!-- Full-Screen Image Viewer -->
+	
+<div id="fullscreenViewer" class="fullscreen">
+    <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+    <img id="fullscreenImg" src="" alt="Fullscreen Image">
+    <button class="prev-btn" onclick="changeImage(-1)"><font color="white"> &#10094;</font></button>
+    <button class="next-btn" onclick="changeImage(1)"><font color="white">&#10095;</font></button>
+</div>
+	
+<button id="scrollTopBtn" class="scroll-to-top" onclick="scrollToTop()">
+<i class="icon icofont-arrow-up"></i>
+</button>
+	
+	
+	<!--Meet Pastor & His Team-->
+<section class="team" id="team">
+	<div class="title">
+	<h1>MEET PASTOR & HIS TEAM</h1>
+	</div>
+	
+<div class="row">
+	<div class="col">
+	<img src="image/Pr Aben Abraham.jpg" alt="" width="70%">
+	<h3>Pr. Aben Abraham</h3>
+	<p>Pastor</p>
+	</div>	
+	
+	<div class="col"> 
+	<img src="image/Br. Vinson Thomas Coir.jpg" alt="" width="70%">
+	<h3>Br. Vinson Thomas</h3>
+	<p>Choir</p>
+	</div>
+	
+	<div class="col">
+	<img src="image/Jeremy Aben.jpg" alt="" width="70%">
+	<h3>Br. Jeremy Aben</h3>
+	<p>Keyboardist</p>
+    </div>
+</div>
+		
+<div class="row">
+	<div class="col">
+	<img src="image/Br. Bibin Philip YP Secretary.jpg" alt="" width="70%">
+	<h3>Br. Bibin Philip</h3>
+	<p>YP Secretary</p>
+	</div>	
+	
+	<div class="col"> 
+	<img src="image/Sis. Rini John LM.jpg" alt="" width="70%">
+	<h3>Sis. Rini John</h3>
+	<p>LM Secretary</p>
+	</div>
+	
+	<div class="col">
+	<img src="image/Sis. Priya Philip.jpg" alt="" width="70%">
+	<h3>Sis Priya Philip</h3>
+	<p>Sunday School Headmistress</p>
+    </div>
+</div>
+		
+</section>
+	
+<!--Sunday School Teachers-->	
+<section class="team2" id="team2">
+	<div class="title">
+	<h1>SUNDAY SCHOOL TEACHERS</h1>
+	</div>
+	
+<div class="row">
+	<div class="col">
+	<img src="image/Justy.jpg" alt="" width="70%">
+	<h3>Sis. Justy</h3>
+	
+	</div>	
+	
+	<div class="col"> 
+	<img src="image/Rini.jpg" alt="" width="70%">
+	<h3>Sis. Rini John</h3>
+	
+	</div>
+	
+	<div class="col">
+	<img src="image/Priya.jpg" alt="" width="70%">
+	<h3>Sis. Priya Philip</h3>
+	</div>
+	
+	
+	
+</div>
+</section>
+	
+	
+	
+
+	<div class="location">
+		<h1>OUR LOCATION</h1>
+			<div class="para">
+				<h2> Church of God in Raleigh (Malayalam Congregation)</h2>
+		    </div>
+		
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.5356050120604!2d-78.7838402!3d35.7867823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acf3af2ffe2fc5%3A0x5397500737b0a36d!2s201%20W%20Chatham%20St%2C%20Cary%2C%20NC%2027511%2C%20USA!5e0!3m2!1sen!2sin!4v1743949739224!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
+	</div>
+	
+	
+	
+	
+	
+<footer id="cont">
+  <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+    <!-- Logo Section -->
+    <div class="col logo-section">
+      <img class="footerl" src="image/Title  3.svg" alt="">
+	
+    </div>
+	  
+   <div class="divideri"></div>
+
+    <!-- Contact Section -->
+    <div class="col" style="text-align: center; flex-grow: 1;">
+<center> <div class="c1">
+			<strong><h3 class="ch2"><span class="f2">⟟</span> &nbsp;<a href="https://maps.app.goo.gl/mxzymrdvhTJE6rgU9" target="_blank" rel="noopener noreferrer" class="ch2">201 West Chatham Street, Cary, NC, USA</a>
+ </h3></strong></div></center>		
+<br>
+		    <h2 class="ch1">CONTACT WITH US</h2><br>
+      <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        
+      <!-- Contacts in a Row -->
+<div class="contacts">
+
+    <div class="contact">
+        <strong>Pastor Aben Abraham</strong><br>
+           <a href="tel:+13478884476">Mob: +1 (347) 888-4476</a>
+    </div>
+	
+	   <div class="divider"></div>
+    <div class="contact">
+        <strong>Br Vinson Thomas</strong><br>
+        <a href="tel:+19843085394">Mob: +1 (984) 308-5394</a>
+    </div>
+</div>
+
+
+
+
+      </div>
+ 
+      <!-- Centered Email with Background -->
+      <div style="margin-top: 15px;">
+        <a href="mailto:churchofgodraleigh@gmail.com"  class="em"
+           style="display: inline-block; background-color: #AD2A0C; color: white; padding: 8px 15px; 
+                  border-radius: 5px; text-decoration: none; font-weight: bold;">
+          churchofgodraleigh@gmail.com
+        </a>
+      </div>
+ <!-- Horizontal Line for Mobile -->
+    <hr class="mobile-hr">
+    </div>
+
+  </div>
+	
+	<hr><br>
+<center><a href="cognc-privacy.html" target="_blank" class="priv">|Privacy Statement|</a>
+	
+	<br> <br>	<p class="footercopy">Copyright © 2025 Church of God Raleigh - All Rights Reserved.</p> <br>
+<a href="https://wa.me/+917025776935" target="_blank" class="lm" style="display: inline-block; background-color: #D4D4D4; color: #222; padding: 4px 8px;">
+Designed by LUMINOUS DESIGN WORLD</a>	
+	
+	
+	</center><br><br>
+</footer>  
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	<script>
+	
+	 const timings = [
+            { name: "Sunday School", time: "9:45 AM TO 10:30 AM" },
+            { name: "Sunday Worship", time: "10:30 AM TO 12:30 PM" },
+            { name: "Ladies Meeting", time: "Thursday 7:00 PM TO 8:00 PM" },
+            { name: "Intercessory Prayer", time: "Friday 7:00 PM TO 8:00 PM" },
+            { name: "Youth Meeting", time: "12:00 TO 1:00 PM Every Second Sunday" },
+            { name: "Fasting Prayer", time: "7:00 PM TO 8:00 PM Every First Friday & Saturday" }
+        ];
+
+        const tableBody = document.getElementById("tableBody");
+
+        timings.forEach(event => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${event.name}</td><td>${event.time}</td>`;
+            tableBody.appendChild(row);
+        });	
+	
+	
+	
+	
+	 function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            const menuIcon = document.getElementById('menuIcon');
+            nav.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.getElementById('mobileNav').classList.remove('active');
+                document.getElementById('menuIcon').classList.remove('active');
+            }
+        });
+	
+		
+		
+		
+		
+let currentIndex = 0;
+const images = ["image/Gallery-01.jpg", "image/Gallery-02.jpg", "image/Gallery-03.jpg", "image/Gallery-04.jpg"];
+
+function openFullscreen(imgSrc) {
+    document.getElementById("fullscreenImg").src = imgSrc;
+    document.getElementById("fullscreenViewer").style.display = "flex";
+    currentIndex = images.indexOf(imgSrc);
+}
+
+function closeFullscreen() {
+    document.getElementById("fullscreenViewer").style.display = "none";
+}
+
+function changeImage(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    document.getElementById("fullscreenImg").src = images[currentIndex];
+}
+		
+//SCRIPT TOP BUTTON   
+    
+    
+  let lastScrollY = 0;
+
+window.addEventListener("scroll", () => {
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 200) {
+    // Scrolling down
+    scrollTopBtn.classList.add("show");
+    scrollTopBtn.classList.remove("hide");
+  } else {
+    // Scrolling up or at top
+    scrollTopBtn.classList.add("hide");
+    scrollTopBtn.classList.remove("show");
+  }
+
+  lastScrollY = currentScrollY;
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+} 
+    		
+		
+
+
+
+		
+		
+		
+	</script>
+	
+</body>
+</html>
