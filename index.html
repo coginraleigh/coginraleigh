@@ -99,9 +99,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         <hr class="underline2"><br>
     </center>
 
-    <!-- Event Cards Section -->
+    <!-- Event Card 1 -->
     <div class="row">
-        <!-- Event Card 1 -->
         <div class="col">
             <div class="event-card">
                 <img src="image/IMG_3737.jpg" alt="May 2025 Monthly Fasting Prayer" class="event-img">
@@ -110,21 +109,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
                     <p><b>Date:</b> May 02–03, 2025</p>
                     <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
                     <p><b>Zoom Meeting:</b> Zoom ID 336 436 5367</p>
-                    <p>Join us for a spirit-filled Zoom fasting prayer with Pastor Baiju Malakkara. Experience a divine touch through worship and the Word.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Event Card 2 (Updated) -->
-        <div class="col">
-            <div class="event-card">
-                <img src="image/IMG_3737.jpg" alt="Church Anniversary Celebration" class="event-img">
-                <div class="event-content">
-                    <h3>Church Anniversary Celebration</h3>
-                    <p><b>Date:</b> June 15, 2025</p>
-                    <p><b>Time:</b> 10:30 AM – 12:30 PM</p>
-                    <p><b>Location:</b> Church of God, Raleigh</p>
-                    <p>Join us as we celebrate the anniversary of our church with special services and celebrations. We invite everyone to come and be part of this joyous occasion!</p>
+                    <p>Join us for a spirit-filled Zoom fasting prayer with Pastor Baiju Malakkara. Experience a divine touch through worship and the Word. Prepare your heart and join us for an impactful time of fasting and prayer.</p>
+                    <a href="zoom://zoom.us/j/3364365367" class="btn-join">Join via Zoom</a>
                 </div>
             </div>
         </div>
@@ -139,9 +125,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
     #events .row {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 30px;
     }
 
     .event-card {
@@ -149,7 +134,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        max-width: 350px;
+        max-width: 600px;
         width: 100%;
         transition: transform 0.3s ease;
     }
@@ -160,9 +145,9 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
     .event-img {
         width: 100%;
-        height: 250px;  /* Fixed height for consistent size */
-        object-fit: cover; /* Ensure the image covers the space */
-        background-color: #f4f4f4; /* Fallback color in case image doesn't fit perfectly */
+        height: auto;
+        object-fit: cover; /* Ensures image is properly sized without distortion */
+        background-color: #f4f4f4; /* Fallback color in case image doesn't load */
     }
 
     .event-content {
@@ -170,7 +155,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     }
 
     .event-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 15px;
         color: #333;
     }
@@ -192,6 +177,21 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         height: 3px;
         background-color: #AD2A0C;
         margin: 10px auto;
+    }
+
+    .btn-join {
+        display: inline-block;
+        background-color: #AD2A0C;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .btn-join:hover {
+        background-color: #C25B4B;
     }
 </style>
 	
