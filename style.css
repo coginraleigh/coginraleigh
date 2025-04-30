@@ -794,56 +794,50 @@ iframe{
 /* === EVENTS SECTION STYLES START === */
 
 	
-.slanted-section2 {
-    background-color: #f3f3f3;
-    padding: 60px 20px;
+.event-marquee-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.event-marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
 }
 
 .event-cards {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+    margin-right: 50px;
 }
 
 .event-card {
     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    overflow: hidden;
-    max-width: 600px;
-    transition: transform 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .event-img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    border-radius: 10px;
 }
 
 .event-content {
-    padding: 25px;
-    text-align: left;
-    ccolor: white;
+    padding: 10px;
 }
 
-.event-content h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: white;;
-}
-
-.event-content p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: white;
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* === EVENTS SECTION STYLES END === */
