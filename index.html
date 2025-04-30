@@ -94,10 +94,10 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 </section>	
 	
 <section class="content" id="events">
-    <center>
+    <div class="text-center">
         <h2><b>UPCOMING EVENTS</b></h2>
         <hr class="underline2"><br>
-    </center>
+    </div>
 
     <!-- Event Card Container -->
     <div class="event-container">
@@ -122,7 +122,13 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         min-height: 100vh; /* Ensure section takes full height */
+    }
+
+    .text-center {
+        text-align: center;
+        margin-bottom: 30px;
     }
 
     .event-container {
