@@ -99,19 +99,17 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         <hr class="underline2"><br>
     </center>
 
-    <!-- Event Card 1 -->
-    <div class="row">
-        <div class="col">
-            <div class="event-card">
-                <img src="image/IMG_3737.jpg" alt="May 2025 Monthly Fasting Prayer" class="event-img">
-                <div class="event-content">
-                    <h3>May 2025 - Month Fasting Prayer</h3>
-                    <p><b>Date:</b> May 02–03, 2025</p>
-                    <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
-                    <p><b>Zoom Meeting:</b> Zoom ID 336 436 5367</p>
-                    <p>Join us for a spirit-filled Zoom fasting prayer with Pastor Baiju Malakkara. Experience a divine touch through worship and the Word. Prepare your heart and join us for an impactful time of fasting and prayer.</p>
-                    <a href="zoom://zoom.us/j/3364365367" class="btn-join">Join via Zoom</a>
-                </div>
+    <!-- Event Card Container -->
+    <div class="event-container">
+        <div class="event-card">
+            <img src="image/IMG_3737.jpg" alt="May 2025 Monthly Fasting Prayer" class="event-img">
+            <div class="event-content">
+                <h3>May 2025 - Month Fasting Prayer</h3>
+                <p><b>Date:</b> May 02–03, 2025</p>
+                <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
+                <p><b>Zoom Meeting:</b> Zoom ID 336 436 5367</p>
+                <p>Join us for a spirit-filled Zoom fasting prayer with Pastor Baiju Malakkara. Experience a divine touch through worship and the Word. Prepare your heart and join us for an impactful time of fasting and prayer.</p>
+                <a href="https://zoom.us/j/3364365367" target="_blank" class="btn-join">Join via Zoom</a>
             </div>
         </div>
     </div>
@@ -121,12 +119,17 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     #events {
         padding: 60px 0;
         background-color: #f4f4f4;
-    }
-
-    #events .row {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        align-items: center;
+        min-height: 100vh; /* Ensure section takes full height */
+    }
+
+    .event-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .event-card {
@@ -134,8 +137,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        width: 80%; /* Control the card's width */
         max-width: 600px;
-        width: 100%;
         transition: transform 0.3s ease;
     }
 
@@ -146,8 +149,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     .event-img {
         width: 100%;
         height: auto;
-        object-fit: cover; /* Ensures image is properly sized without distortion */
-        background-color: #f4f4f4; /* Fallback color in case image doesn't load */
+        object-fit: cover;
     }
 
     .event-content {
