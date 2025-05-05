@@ -101,19 +101,20 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <p style="font-size: 1.2rem; color: #666;">Stay tuned! More events coming soon.</p>
   </div>
 
-  <!-- 🔽 PAST EVENTS DROPDOWN SECTION -->
+  <!-- 🔽 PAST EVENTS THUMBNAIL VIEW -->
   <div class="text-center" style="margin-top: 40px;">
     <h2><b>PAST EVENTS</b></h2>
     <hr class="underline2"><br>
-    <button class="dropdown-toggle" onclick="togglePastEvents()">Show Past Events</button>
   </div>
 
-  <div id="pastEventsContainer" class="event-container" style="display: none;">
-    <!-- ✅ May 2025 Event -->
-    <div class="event-card">
-      <img src="image/IMG_3737.jpg" alt="May 2025 Monthly Fasting Prayer" class="event-img" />
-      <div class="event-content">
-        <h3>May 2025 - Month Fasting Prayer</h3>
+  <div class="event-thumbnail-grid">
+    <!-- ✅ May 2025 Thumbnail Card -->
+    <div class="event-thumb-card">
+      <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer" class="thumb-img">
+      <h4>May 2025 Fasting Prayer</h4>
+      <button class="btn-join" onclick="toggleDetails('event1')">View Details</button>
+
+      <div id="event1" class="event-detail-view" style="display: none;">
         <p><b>Date:</b> May 02–03, 2025</p>
         <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
         <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word. We thank God for His presence and all who participated.</p>
@@ -122,8 +123,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   </div>
 </section>
 
-
-<!-- ✅ CSS STYLES -->
+<!-- ✅ CSS STYLES MOVED HERE -->
 <style>
   body {
     margin: 0;
@@ -149,110 +149,67 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin: 0 auto 20px;
   }
 
-  .event-container {
+  .event-thumbnail-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
   }
 
-  .event-card {
+  .event-thumb-card {
     background-color: #fff;
     border-radius: 10px;
+    width: 280px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    transition: transform 0.3s ease;
+    padding: 15px;
+    text-align: center;
   }
 
-  .event-card:hover {
-    transform: scale(1.02);
-  }
-
-  .event-img {
+  .thumb-img {
     width: 100%;
-    height: auto;
+    height: 160px;
     object-fit: cover;
-  }
-
-  .event-content {
-    padding: 20px;
-  }
-
-  .event-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-
-  .event-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #555;
+    border-radius: 5px;
     margin-bottom: 10px;
   }
 
-  .event-content b {
-    font-weight: bold;
+  .event-thumb-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
     color: #333;
   }
 
-  .dropdown-toggle {
-    background-color: #AD2A0C;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  .event-detail-view {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555;
   }
 
-  .dropdown-toggle:hover {
+  .btn-join {
+    display: inline-block;
+    background-color: #AD2A0C;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  .btn-join:hover {
     background-color: #C25B4B;
   }
 
-  @media (max-width: 768px) {
-    .event-container {
-      flex-direction: column;
-      padding: 0 10px;
-    }
-
-    .event-card {
-      width: 100%;
-      box-shadow: none;
-    }
-
-    .event-content {
-      padding: 15px;
-    }
-
-    .event-content h3 {
-      font-size: 1.3rem;
-    }
-
-    .event-content p {
-      font-size: 0.95rem;
-    }
-  }
 </style>
 
-<!-- ✅ JavaScript for toggle -->
+<!-- ✅ JavaScript -->
 <script>
-  function togglePastEvents() {
-    const pastContainer = document.getElementById("pastEventsContainer");
-    const button = document.querySelector(".dropdown-toggle");
-
-    if (pastContainer.style.display === "none") {
-      pastContainer.style.display = "flex";
-      button.textContent = "Hide Past Events";
-    } else {
-      pastContainer.style.display = "none";
-      button.textContent = "Show Past Events";
-    }
+  function toggleDetails(id) {
+    const detail = document.getElementById(id);
+    detail.style.display = detail.style.display === "none" ? "block" : "none";
   }
 </script>
 
