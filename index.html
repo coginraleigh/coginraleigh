@@ -110,14 +110,19 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="event-thumbnail-grid">
     <!-- ✅ May 2025 Thumbnail Card -->
     <div class="event-thumb-card">
-      <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer" class="thumb-img">
-      <h4>May 2025 Fasting Prayer</h4>
-      <button class="btn-join" onclick="toggleDetails('event1')">View Details</button>
+      <div class="event-thumb-img">
+        <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer">
+      </div>
+      <div class="event-thumb-content">
+        <h4>May 2025 Fasting Prayer</h4>
+        <p class="event-date"><b>Date:</b> May 02–03, 2025</p>
+        <p class="event-summary">This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word.</p>
+        <button class="btn-join" onclick="toggleDetails('event1')">View Details</button>
 
-      <div id="event1" class="event-detail-view" style="display: none;">
-        <p><b>Date:</b> May 02–03, 2025</p>
-        <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
-        <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word. We thank God for His presence and all who participated.</p>
+        <div id="event1" class="event-detail-view" style="display: none;">
+          <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
+          <p>We thank God for His presence and all who participated.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -165,27 +170,44 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
+    transition: transform 0.3s ease;
   }
 
-  .thumb-img {
+  .event-thumb-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .event-thumb-img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
   }
 
-  .event-thumb-card h4 {
+  .event-thumb-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .event-thumb-content h4 {
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-size: 1.1rem;
     color: #333;
   }
 
-  .event-detail-view {
-    text-align: left;
-    margin-top: 10px;
+  .event-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+
+  .event-summary {
     font-size: 0.95rem;
     color: #555;
+    margin-bottom: 10px;
   }
 
   .btn-join {
@@ -196,13 +218,39 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .btn-join:hover {
     background-color: #C25B4B;
   }
 
+  .event-detail-view {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .event-thumbnail-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .event-thumb-card {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .event-thumb-content {
+      padding: 10px;
+    }
+
+    .btn-join {
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <!-- ✅ JavaScript -->
@@ -212,6 +260,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     detail.style.display = detail.style.display === "none" ? "block" : "none";
   }
 </script>
+
 	
  <section class="slanted-section2" id="meeting">
       	<center><h2><b>MEETING SCHEDULE</b></h2>
