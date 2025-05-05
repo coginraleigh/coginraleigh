@@ -107,25 +107,16 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <hr class="underline2"><br>
   </div>
 
-  <!-- 🔽 PAST EVENTS THUMBNAIL GRID -->
-  <div class="event-thumbnail-grid">
-    <!-- ✅ May 2025 Thumbnail Card -->
-    <div class="event-thumb-card fade-effect">
-      <div class="event-thumb-img">
+  <!-- 🔽 PAST EVENTS DROPDOWN -->
+  <div class="event-dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown('may2025')">May 2025 - Fasting Prayer</button>
+    <div class="dropdown-content" id="may2025">
+      <div class="event-thumbnail">
         <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer">
-      </div>
-      <div class="event-thumb-content">
-        <h4 class="event-title">May 2025 Fasting Prayer</h4>
-        <p class="event-date" onclick="toggleEventDetails(event)">
-          <b>Date:</b> May 02–03, 2025
-        </p>
-        <p class="event-summary">Click to view details</p>
-
-        <!-- Hidden Event Details -->
-        <div class="event-details" style="display: none;">
+        <div class="event-details">
+          <p><b>Date:</b> May 02–03, 2025</p>
           <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
-          <p><b>Zoom Meeting:</b> Zoom ID 336 436 5367</p>
-          <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word.</p>
+        <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word. Thank you for joining us!</p>
         </div>
       </div>
     </div>
@@ -158,33 +149,69 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin: 0 auto 20px;
   }
 
-  .event-thumbnail-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 0 auto;
-    max-width: 1000px;
-  }
-
-  .event-thumb-card {
-    background-color: #fff;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+  /* Style for the dropdown button */
+  .dropdown-btn {
+    background-color: #AD2A0C;
+    color: white;
+    padding: 12px 20px;
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    transition: transform 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
   }
 
-  .event-thumb-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  .dropdown-btn:hover {
+    background-color: #C25B4B;
   }
 
-  /* Fade-in Animation */
+  /* The dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+
+  .event-thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .event-details {
+    padding: 15px;
+    color: #333;
+  }
+
+  .event-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .event-details b {
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Animation for dropdown */
+  .fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -194,75 +221,29 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     }
   }
 
-  .event-thumb-img {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-
-  .event-thumb-img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .event-thumb-content h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-
-  .event-date {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 10px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  .event-summary {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-
-  .event-details {
-    font-size: 0.9rem;
-    color: #333;
-    margin-top: 10px;
-  }
-
+  /* Media queries for responsiveness */
   @media (max-width: 768px) {
-    .event-thumbnail-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .event-thumb-card {
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .event-thumb-content {
-      padding: 10px;
+    .dropdown-btn {
+      width: 80%;
+      font-size: 1rem;
     }
   }
 </style>
 
-<!-- ✅ JavaScript to Toggle Event Details -->
+<!-- ✅ JavaScript to Toggle Dropdown for Past Event -->
 <script>
-  // Function to toggle event details visibility
-  function toggleEventDetails(event) {
-    const eventDetails = event.target.nextElementSibling;
-    if (eventDetails.style.display === "none" || eventDetails.style.display === "") {
-      eventDetails.style.display = "block";
+  // Function to toggle the visibility of the event details (dropdown)
+  function toggleDropdown(eventId) {
+    const dropdownContent = document.getElementById(eventId);
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
     } else {
-      eventDetails.style.display = "none";
+      dropdownContent.style.display = "block";
+      dropdownContent.classList.add('fadeIn'); // Add fadeIn animation when expanding
     }
   }
 </script>
+
 	
  <section class="slanted-section2" id="meeting">
       	<center><h2><b>MEETING SCHEDULE</b></h2>
