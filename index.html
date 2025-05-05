@@ -117,12 +117,6 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
         <h4>May 2025 Fasting Prayer</h4>
         <p class="event-date"><b>Date:</b> May 02–03, 2025</p>
         <p class="event-summary">This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word.</p>
-        <button class="btn-join" onclick="toggleDetails('event1')">View Details</button>
-
-        <div id="event1" class="event-detail-view" style="display: none;">
-          <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
-          <p>We thank God for His presence and all who participated.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -210,28 +204,6 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin-bottom: 10px;
   }
 
-  .btn-join {
-    display: inline-block;
-    background-color: #AD2A0C;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-
-  .btn-join:hover {
-    background-color: #C25B4B;
-  }
-
-  .event-detail-view {
-    text-align: left;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #555;
-  }
-
   @media (max-width: 768px) {
     .event-thumbnail-grid {
       flex-direction: column;
@@ -246,20 +218,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     .event-thumb-content {
       padding: 10px;
     }
-
-    .btn-join {
-      font-size: 1rem;
-    }
   }
 </style>
-
-<!-- ✅ JavaScript -->
-<script>
-  function toggleDetails(id) {
-    const detail = document.getElementById(id);
-    detail.style.display = detail.style.display === "none" ? "block" : "none";
-  }
-</script>
 
 	
  <section class="slanted-section2" id="meeting">
