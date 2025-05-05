@@ -112,15 +112,14 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <!-- Toggle Button for May 2025 -->
     <button class="dropdown-btn" onclick="toggleDropdown('may2025')">May 2025</button>
     <div class="dropdown-content" id="may2025">
-      <!-- Gallery View for Past Event -->
-      <div class="gallery-view">
-        <div class="gallery-item">
-          <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer" class="gallery-img">
-          <p><b>May 02-03, 2025</b></p>
-        </div>
-        <!-- Add more images as needed -->
-        
+      <!-- Event Details for Past Event -->
+      <div class="event-details">
+        <p><b>May 02-03, 2025 - Month Fasting Prayer</b></p>
+        <p><b>Date:</b> May 02–03, 2025</p>
+        <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
+        <p><b>Event Summary:</b> Join us for a spirit-filled fasting prayer with Pastor Baiju Malakkara. Experience divine worship and powerful prayer times together.</p>
       </div>
+      <!-- Add more past event details as needed -->
     </div>
   </div>
 </section>
@@ -179,31 +178,15 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin-top: 10px;
   }
 
-  /* Gallery View Styles */
-  .gallery-view {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Reduced gap between images */
-    padding: 10px;
-  }
-
-  .gallery-item {
-    width: 120px; /* Smaller item width */
-    text-align: center;
-  }
-
-  .gallery-img {
-    width: 100%; /* Set image to fit container */
-    height: 100px; /* Reduced height */
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .gallery-item p {
-    font-size: 0.9rem; /* Smaller text size */
+  /* Event Details Styles */
+  .event-details {
+    text-align: left;
+    font-size: 1rem;
     color: #333;
-    margin-top: 5px;
+  }
+
+  .event-details b {
+    color: #AD2A0C;
   }
 
   /* Fade-In Animation for Dropdown */
@@ -227,17 +210,8 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
       font-size: 1rem;
     }
 
-    .gallery-view {
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .gallery-item {
-      width: 100px; /* Smaller width on mobile */
-    }
-
-    .gallery-img {
-      height: 80px; /* Smaller height on mobile */
+    .event-details {
+      font-size: 0.9rem;
     }
   }
 </style>
@@ -255,6 +229,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     }
   }
 </script>
+
 
 
 
