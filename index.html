@@ -107,17 +107,19 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <hr class="underline2"><br>
   </div>
 
-  <!-- 🔽 PAST EVENTS DROPDOWN -->
+  <!-- 🔽 PAST EVENTS DROPDOWN (Compact Toggle) -->
   <div class="event-dropdown">
-    <button class="dropdown-btn" onclick="toggleDropdown('may2025')">May 2025 - Fasting Prayer</button>
+    <!-- Toggle Button for May 2025 -->
+    <button class="dropdown-btn" onclick="toggleDropdown('may2025')">May 2025</button>
     <div class="dropdown-content" id="may2025">
-      <div class="event-thumbnail">
-        <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer">
-        <div class="event-details">
-          <p><b>Date:</b> May 02–03, 2025</p>
-          <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
-        <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word. Thank you for joining us!</p>
+      <!-- Gallery View for Past Event -->
+      <div class="gallery-view">
+        <div class="gallery-item">
+          <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer" class="gallery-img">
+          <p><b>May 02-03, 2025</b></p>
         </div>
+        <!-- Add more images as needed -->
+        
       </div>
     </div>
   </div>
@@ -149,15 +151,14 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin: 0 auto 20px;
   }
 
-  /* Style for the dropdown button */
+  /* Compact Style for the dropdown button */
   .dropdown-btn {
     background-color: #AD2A0C;
     color: white;
-    padding: 12px 20px;
+    padding: 8px 16px;
     text-align: center;
     border: none;
-    width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
     margin: 10px 0;
@@ -178,36 +179,34 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     margin-top: 10px;
   }
 
-  .event-thumbnail {
+  /* Gallery View Styles */
+  .gallery-view {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
   }
 
-  .event-thumbnail img {
+  .gallery-item {
+    width: 250px;
+    text-align: center;
+  }
+
+  .gallery-img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
   }
 
-  .event-details {
-    padding: 15px;
-    color: #333;
-  }
-
-  .event-details p {
+  .gallery-item p {
     font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-
-  .event-details b {
-    font-weight: bold;
     color: #333;
+    margin-top: 10px;
   }
 
-  /* Animation for dropdown */
+  /* Fade-In Animation for Dropdown */
   .fadeIn {
     animation: fadeIn 0.5s ease-in-out;
   }
@@ -221,11 +220,16 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     }
   }
 
-  /* Media queries for responsiveness */
+  /* Responsive Design for Mobile */
   @media (max-width: 768px) {
     .dropdown-btn {
       width: 80%;
       font-size: 1rem;
+    }
+
+    .gallery-view {
+      flex-direction: column;
+      gap: 10px;
     }
   }
 </style>
@@ -243,6 +247,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     }
   }
 </script>
+
 
 	
  <section class="slanted-section2" id="meeting">
