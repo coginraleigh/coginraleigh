@@ -101,22 +101,32 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <p style="font-size: 1.2rem; color: #666;">Stay tuned! More events coming soon.</p>
   </div>
 
-  <!-- 🔽 PAST EVENTS THUMBNAIL VIEW -->
+  <!-- 🔽 PAST EVENTS SECTION -->
   <div class="text-center" style="margin-top: 40px;">
     <h2><b>PAST EVENTS</b></h2>
     <hr class="underline2"><br>
   </div>
 
+  <!-- 🔽 PAST EVENTS THUMBNAIL GRID -->
   <div class="event-thumbnail-grid">
     <!-- ✅ May 2025 Thumbnail Card -->
-    <div class="event-thumb-card">
+    <div class="event-thumb-card fade-effect">
       <div class="event-thumb-img">
         <img src="image/IMG_3737.jpg" alt="May 2025 Fasting Prayer">
       </div>
       <div class="event-thumb-content">
-        <h4>May 2025 Fasting Prayer</h4>
-        <p class="event-date"><b>Date:</b> May 02–03, 2025</p>
-        <p class="event-summary">This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word.</p>
+        <h4 class="event-title">May 2025 Fasting Prayer</h4>
+        <p class="event-date" onclick="toggleEventDetails(event)">
+          <b>Date:</b> May 02–03, 2025
+        </p>
+        <p class="event-summary">Click to view details</p>
+
+        <!-- Hidden Event Details -->
+        <div class="event-details" style="display: none;">
+          <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
+          <p><b>Zoom Meeting:</b> Zoom ID 336 436 5367</p>
+          <p>This spirit-filled fasting prayer, led by Pastor Baiju Malakkara, was a powerful time of worship and the Word.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -164,12 +174,24 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
     transition: transform 0.3s ease;
   }
 
   .event-thumb-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .event-thumb-img {
@@ -196,12 +218,20 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     font-size: 0.9rem;
     color: #777;
     margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
   }
 
   .event-summary {
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 10px;
+  }
+
+  .event-details {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 10px;
   }
 
   @media (max-width: 768px) {
@@ -221,6 +251,18 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   }
 </style>
 
+<!-- ✅ JavaScript to Toggle Event Details -->
+<script>
+  // Function to toggle event details visibility
+  function toggleEventDetails(event) {
+    const eventDetails = event.target.nextElementSibling;
+    if (eventDetails.style.display === "none" || eventDetails.style.display === "") {
+      eventDetails.style.display = "block";
+    } else {
+      eventDetails.style.display = "none";
+    }
+  }
+</script>
 	
  <section class="slanted-section2" id="meeting">
       	<center><h2><b>MEETING SCHEDULE</b></h2>
