@@ -666,48 +666,131 @@ todayStatus.textContent = hasMeetingToday
 	  
    <div class="divideri"></div>
 
-    <!-- Contact Section -->
-    <div class="col" style="text-align: center; flex-grow: 1;">
-<center> <div class="c1">
-			<strong><h3 class="ch2"><span class="f2">⟟</span> &nbsp;<a href="https://maps.app.goo.gl/mxzymrdvhTJE6rgU9" target="_blank" rel="noopener noreferrer" class="ch2">201 West Chatham Street, Cary, NC, USA</a>
- </h3></strong></div></center>		
-<br>
-		    <h2 class="ch1">CONTACT WITH US</h2><br>
-      <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap;">
-        
-      <!-- Contacts in a Row -->
-<div class="contacts">
+    <!-- ===== CONTACT SECTION START ===== -->
+<section class="contact-section" id="contact">
+  <h2>Contact Us</h2>
+  <p class="contact-sub">Reach us directly on WhatsApp or Email</p>
+  <div class="contact-icons">
+    <a href="https://wa.me/19843085394" target="_blank">
+      <i class="fa-brands fa-whatsapp whatsapp-icon"></i> WhatsApp
+    </a>
+    <a href="mailto:churchofgodraleigh@gmail.com">
+      <i class="fa fa-envelope email-icon"></i> Email
+    </a>
+  </div>
+</section>
 
-    <div class="contact">
-        <strong>Pastor Aben Abraham</strong><br>
-           <a href="tel:+13478884476">Mob: +1 (347) 888-4476</a>
-    </div>
-	
-	   <div class="divider"></div>
-    <div class="contact">
-        <strong>Br Vinson Thomas</strong><br>
-        <a href="tel:+19843085394">Mob: +1 (984) 308-5394</a>
-    </div>
+<!-- Floating Contact Bubbles -->
+<div class="floating-contact">
+  <a href="https://wa.me/19843085394" target="_blank" class="float-btn whatsapp-float">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="mailto:churchofgodraleigh@gmail.com" class="float-btn email-float">
+    <i class="fa fa-envelope"></i>
+  </a>
 </div>
 
+<style>
+  /* Contact Section */
+  .contact-section {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  .contact-sub {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+  }
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .contact-icons a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .contact-icons a i {
+    font-size: 28px;
+    padding: 12px;
+    border-radius: 50%;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .contact-icons a:hover i {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  .whatsapp-icon {
+    background: #25D366;
+  }
+  .email-icon {
+    background: #AD2A0C;
+  }
 
+  /* Floating Contact Buttons */
+  .floating-contact {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+  }
+  .float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: relative;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+  }
+  .float-btn:hover {
+    transform: scale(1.1);
+  }
+  .whatsapp-float {
+    background: #25D366;
+  }
+  .email-float {
+    background: #AD2A0C;
+  }
 
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0,0,0,0.3);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(0,0,0,0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+  }
+</style>
+<!-- ===== CONTACT SECTION END ===== -->
 
-      </div>
- 
-      <!-- Centered Email with Background -->
-      <div style="margin-top: 15px;">
-        <a href="mailto:churchofgodraleigh@gmail.com"  class="em"
-           style="display: inline-block; background-color: #AD2A0C; color: white; padding: 8px 15px; 
-                  border-radius: 5px; text-decoration: none; font-weight: bold;">
-          churchofgodraleigh@gmail.com
-        </a>
-      </div>
- <!-- Horizontal Line for Mobile -->
-    <hr class="mobile-hr">
-    </div>
-
-  </div>
 	
 	<hr><br>
 <center><a href="cognc-privacy.html" target="_blank" class="priv">|Privacy Statement|</a>
@@ -720,111 +803,10 @@ Designed by COG in Raleigh Team</a>
 	</center><br><br>
 </footer>  
 
-
-
-
-
-	
-	
-	
-	
-	
-	
-	<script>
-	
-	 const timings = [
-            { name: "Sunday School", time: "9:45 AM TO 10:30 AM" },
-            { name: "Sunday Worship", time: "10:30 AM TO 12:30 PM" },
-            { name: "Ladies Meeting", time: "Thursday 7:00 PM TO 8:00 PM" },
-            { name: "Intercessory Prayer", time: "Friday 7:00 PM TO 8:00 PM" },
-            { name: "Youth Meeting", time: "12:00 TO 1:00 PM Every Second Sunday" },
-            { name: "Fasting Prayer", time: "7:00 PM TO 8:00 PM Every First Friday & Saturday" }
-        ];
-
-        const tableBody = document.getElementById("tableBody");
-
-        timings.forEach(event => {
-            const row = document.createElement("tr");
-            row.innerHTML = `<td>${event.name}</td><td>${event.time}</td>`;
-            tableBody.appendChild(row);
-        });	
-	
-	
-	
-	
-	 function toggleMenu() {
-            const nav = document.getElementById('mobileNav');
-            const menuIcon = document.getElementById('menuIcon');
-            nav.classList.toggle('active');
-            menuIcon.classList.toggle('active');
-        }
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                document.getElementById('mobileNav').classList.remove('active');
-                document.getElementById('menuIcon').classList.remove('active');
-            }
-        });
-	
-		
-		
-		
-		
-let currentIndex = 0;
-const images = ["image/Gallery-01.jpg", "image/Gallery-02.jpg", "image/Gallery-03.jpg", "image/Gallery-04.jpg"];
-
-function openFullscreen(imgSrc) {
-    document.getElementById("fullscreenImg").src = imgSrc;
-    document.getElementById("fullscreenViewer").style.display = "flex";
-    currentIndex = images.indexOf(imgSrc);
-}
-
-function closeFullscreen() {
-    document.getElementById("fullscreenViewer").style.display = "none";
-}
-
-function changeImage(direction) {
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    document.getElementById("fullscreenImg").src = images[currentIndex];
-}
-		
-//SCRIPT TOP BUTTON   
-    
-    
-  let lastScrollY = 0;
-
-window.addEventListener("scroll", () => {
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
-  const currentScrollY = window.scrollY;
-
-  if (currentScrollY > lastScrollY && currentScrollY > 200) {
-    // Scrolling down
-    scrollTopBtn.classList.add("show");
-    scrollTopBtn.classList.remove("hide");
-  } else {
-    // Scrolling up or at top
-    scrollTopBtn.classList.add("hide");
-    scrollTopBtn.classList.remove("show");
-  }
-
-  lastScrollY = currentScrollY;
-});
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-} 
-    		
-		
-
-
-
-		
-		
-		
-	</script>
 	
 </body>
 </html>
+
 
 
 
