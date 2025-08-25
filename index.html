@@ -414,42 +414,87 @@ todayStatus.textContent = hasMeetingToday
 	
 		
  <section class="slanted-section3" id="gal">
-      <div class="card-container">
-		  
-    <div class="card" onclick="openFullscreen('image/Gallery-01.jpg')">
-        <img src="image/Gallery-01.jpg" alt="Image 1">
-		
+  <div class="gallery-title">
+    <h2>GALLERY</h2>
+    <hr class="underline2">
+  </div>
+
+  <div class="card-container">
+    <div class="card" onclick="openFullscreen(0)">
+      <img src="image/Gallery-01.jpg" alt="Image 1">
     </div>
-		  
-    <div class="card" onclick="openFullscreen('image/Gallery-02.jpg')">
-        <img src="image/Gallery-02.jpg" alt="Image 2">
-		
+    <div class="card" onclick="openFullscreen(1)">
+      <img src="image/Gallery-02.jpg" alt="Image 2">
     </div>
-		  
-    <div class="card" onclick="openFullscreen('image/Gallery-03.jpg')">
-        <img src="image/Gallery-03.jpg" alt="Image 3">
-		
+    <div class="card" onclick="openFullscreen(2)">
+      <img src="image/Gallery-03.jpg" alt="Image 3">
     </div>
-		  
-    <div class="card" onclick="openFullscreen('image/Gallery-04.jpg')">
-        <img src="image/Gallery-04.jpg" alt="Image 4">
-		
+    <div class="card" onclick="openFullscreen(3)">
+      <img src="image/Gallery-04.jpg" alt="Image 4">
     </div>
-</div>
+  </div>
 </section>
+
 	
 	<!-- Full-Screen Image Viewer -->
 	
-<div id="fullscreenViewer" class="fullscreen">
-    <span class="close-btn" onclick="closeFullscreen()">&times;</span>
-    <img id="fullscreenImg" src="" alt="Fullscreen Image">
-    <button class="prev-btn" onclick="changeImage(-1)"><font color="white"> &#10094;</font></button>
-    <button class="next-btn" onclick="changeImage(1)"><font color="white">&#10095;</font></button>
+<div id="fullscreenViewer" class="fullscreen" aria-hidden="true">
+  <span class="close-btn" onclick="closeFullscreen()" aria-label="Close">&times;</span>
+  <img id="fullscreenImg" src="" alt="Fullscreen Image">
+  <button class="prev-btn" onclick="changeImage(-1)" aria-label="Previous Image">&#10094;</button>
+  <button class="next-btn" onclick="changeImage(1)" aria-label="Next Image">&#10095;</button>
 </div>
-	
-<button id="scrollTopBtn" class="scroll-to-top" onclick="scrollToTop()">
-<i class="icon icofont-arrow-up"></i>
-</button>
+
+<script>
+const images = [
+  "image/Gallery-01.jpg",
+  "image/Gallery-02.jpg",
+  "image/Gallery-03.jpg",
+  "image/Gallery-04.jpg"
+];
+
+let currentIndex = 0;
+const fullscreenViewer = document.getElementById("fullscreenViewer");
+const fullscreenImg = document.getElementById("fullscreenImg");
+
+function openFullscreen(index) {
+  currentIndex = index;
+  fullscreenImg.src = images[currentIndex];
+  fullscreenViewer.style.display = "flex";
+  fullscreenViewer.setAttribute("aria-hidden", "false");
+}
+
+function closeFullscreen() {
+  fullscreenViewer.style.display = "none";
+  fullscreenViewer.setAttribute("aria-hidden", "true");
+}
+
+function changeImage(direction) {
+  currentIndex = (currentIndex + direction + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex];
+}
+
+// ✅ Mobile swipe support
+let startX = 0;
+fullscreenViewer.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+}, {passive: true});
+
+fullscreenViewer.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > 50) { // minimum swipe distance
+    if (diff > 0) {
+      changeImage(1); // swipe left -> next
+    } else {
+      changeImage(-1); // swipe right -> previous
+    }
+  }
+});
+</script>
+
+
 	
 	
 	<!--Meet Pastor & His Team-->
@@ -859,6 +904,7 @@ todayStatus.textContent = hasMeetingToday
 	
 </body>
 </html>
+
 
 
 
