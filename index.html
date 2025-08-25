@@ -708,13 +708,11 @@ fullscreenViewer.addEventListener("touchend", e => {
 <footer id="cont">
   <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
-  <!-- Logo Section Above Footer -->
-<section class="footer-logo-section">
+ <!-- LOGO ABOVE FOOTER -->
+<div class="footer-logo-section">
   <img class="logo-glow" src="image/Title  3.svg" alt="Church of God Logo">
-</section>
-	  
-<!-- ===== FOOTER START ===== -->
-<!-- Footer Section -->
+</div>
+
 <footer>
   <div class="footer-content">
     <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
@@ -723,63 +721,74 @@ fullscreenViewer.addEventListener("touchend", e => {
 </footer>
 
 
+
+
 <style>
  
-/* ================== Logo Glow Section ================== */
-.footer-logo-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px 30px 20px; /* extra padding for bigger logo */
-  background-color: #111;
-}
-
+/* ================== Logo Glow & Float ================== */
 .logo-glow {
-  width: 280px;  /* increased size */
+  width: 400px;  /* adjust size */
   height: auto;
-  animation: gradientGlow 6s infinite alternate ease-in-out;
-  filter: drop-shadow(0 0 12px #ff6a6a) drop-shadow(0 0 20px #ff6a6a);
+  animation: gradientGlow 6s infinite alternate ease-in-out,
+             floatUpDown 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px #ff6a6a) drop-shadow(0 0 26px #ff6a6a);
 }
 
-/* ================== Gradient Glow Keyframes ================== */
+/* Gradient Glow Keyframes */
 @keyframes gradientGlow {
-  0% {
-    filter: drop-shadow(0 0 12px #ff6a6a) drop-shadow(0 0 18px #ff6a6a);
-  }
-  25% {
-    filter: drop-shadow(0 0 12px #f0e68c) drop-shadow(0 0 18px #f0e68c);
-  }
-  50% {
-    filter: drop-shadow(0 0 14px #6a5acd) drop-shadow(0 0 20px #6a5acd);
-  }
-  75% {
-    filter: drop-shadow(0 0 12px #40e0d0) drop-shadow(0 0 18px #40e0d0);
-  }
-  100% {
-    filter: drop-shadow(0 0 16px #ff69b4) drop-shadow(0 0 24px #ff69b4);
-  }
+  0% { filter: drop-shadow(0 0 16px #ff6a6a) drop-shadow(0 0 26px #ff6a6a); }
+  25% { filter: drop-shadow(0 0 16px #f0e68c) drop-shadow(0 0 26px #f0e68c); }
+  50% { filter: drop-shadow(0 0 18px #6a5acd) drop-shadow(0 0 28px #6a5acd); }
+  75% { filter: drop-shadow(0 0 16px #40e0d0) drop-shadow(0 0 26px #40e0d0); }
+  100% { filter: drop-shadow(0 0 20px #ff69b4) drop-shadow(0 0 32px #ff69b4); }
+}
+
+/* Vertical Float Keyframes */
+@keyframes floatUpDown {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); } /* moves up slightly */
+  100% { transform: translateY(0px); }
+}
+
+/* ================== Footer Section ================== */
+footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.privacy-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
 }
 
 /* ================== Responsive ================== */
 @media (max-width: 1024px) {
-  .logo-glow {
-    width: 220px;
-  }
+  .logo-glow { width: 320px; }
 }
 
 @media (max-width: 768px) {
-  .logo-glow {
-    width: 180px;
-  }
+  .logo-glow { width: 250px; }
 }
 
 @media (max-width: 480px) {
-  .logo-glow {
-    width: 150px;
-  }
+  .logo-glow { width: 180px; }
 }
-
 </style>
+
 <!-- ===== FOOTER END ===== -->
 
 
@@ -937,6 +946,7 @@ fullscreenViewer.addEventListener("touchend", e => {
 	
 </body>
 </html>
+
 
 
 
