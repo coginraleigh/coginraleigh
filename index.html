@@ -675,128 +675,163 @@ todayStatus.textContent = hasMeetingToday
 
     <!-- ===== CONTACT SECTION START ===== -->
 <section class="contact-section" id="contact">
-  <h2>Contact Us</h2>
-  <p class="contact-sub">Reach us directly on WhatsApp or Email</p>
-  <div class="contact-icons">
-    <a href="https://wa.me/19843085394" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-whatsapp whatsapp-icon"></i> WhatsApp
+  <<!-- ===== FLOATING CONTACT BUTTONS START ===== -->
+<div class="floating-container">
+  <button class="fab-main" aria-label="Open contact options">
+    <i class="fas fa-plus"></i>
+  </button>
+  <div class="fab-options">
+    <!-- ✅ WhatsApp -->
+    <a id="whatsapp-link" class="fab-btn whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span class="tooltip">WhatsApp</span>
     </a>
-    <a href="mailto:churchofgodraleigh@gmail.com">
-      <i class="fa fa-envelope email-icon"></i> Email
+
+    <!-- ✅ Email -->
+    <a href="mailto:churchofgodraleigh@gmail.com?subject=Hello%20Church%20of%20God%20Raleigh&body=Hi,%0D%0A%0D%0AI would like to get in touch with you."
+       class="fab-btn email" aria-label="Send us an Email">
+      <i class="fas fa-envelope"></i>
+      <span class="tooltip">Email</span>
     </a>
   </div>
-</section>
-
-<!-- Floating Contact Bubbles -->
-<div class="floating-contact">
-  <a href="https://wa.me/19843085394" target="_blank" rel="noopener noreferrer" class="float-btn whatsapp-float">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-  <a href="mailto:churchofgodraleigh@gmail.com" class="float-btn email-float">
-    <i class="fa fa-envelope"></i>
-  </a>
 </div>
 
 <style>
-  /* Contact Section */
-  .contact-section {
-    background: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .contact-section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #222;
-  }
-  .contact-sub {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 25px;
-  }
-  .contact-icons {
+  .floating-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  .contact-icons a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #333;
-    font-weight: 500;
-    transition: transform 0.3s ease;
-  }
-  .contact-icons a i {
-    font-size: 28px;
-    padding: 12px;
-    border-radius: 50%;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .contact-icons a:hover {
-    transform: translateY(-3px);
-  }
-  .contact-icons a:hover i {
-    transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  .whatsapp-icon {
-    background: #25D366;
-  }
-  .email-icon {
-    background: #AD2A0C;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
-  /* Floating Contact Buttons */
-  .floating-contact {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
+  /* Main toggle button */
+  .fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+  .fab-main:hover {
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  /* Options container */
+  .fab-options {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 1000;
+    margin-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
   }
-  .float-btn {
-    width: 55px;
-    height: 55px;
+  .fab-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Icon buttons */
+  .fab-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 24px;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    position: relative;
-    animation: pulse 2s infinite;
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, background 0.3s;
   }
-  .float-btn:hover {
-    transform: scale(1.1);
+  .fab-btn:hover {
+    transform: scale(1.15);
   }
-  .whatsapp-float {
-    background: #25D366;
+  .fab-btn.whatsapp { background: #25D366; }
+  .fab-btn.email { background: #D44638; }
+
+  /* Tooltips */
+  .fab-btn .tooltip {
+    position: absolute;
+    right: 60px;
+    background: #222;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    white-space: nowrap;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
   }
-  .email-float {
-    background: #AD2A0C;
+  .fab-btn:hover .tooltip {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  /* Pulse Animation */
+  /* Pulse animation */
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
     70% { box-shadow: 0 0 0 15px rgba(0,0,0,0); }
     100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
   }
-</style>
-<!-- ===== CONTACT SECTION END ===== -->
 
+  /* Desktop view: show always */
+  @media (min-width: 769px) {
+    .fab-options {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+    .fab-main {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fabMain = document.querySelector(".fab-main");
+    const fabOptions = document.querySelector(".fab-options");
+    const fabIcon = fabMain.querySelector("i");
+    const whatsappLink = document.getElementById("whatsapp-link");
+
+    // ✅ Detect device → open WhatsApp app on mobile, web on desktop
+    const phoneNumber = "19843085394"; // change number if needed
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      whatsappLink.href = `https://wa.me/${phoneNumber}`;
+    } else {
+      whatsappLink.href = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+      whatsappLink.target = "_blank";
+      whatsappLink.rel = "noopener noreferrer";
+    }
+
+    fabMain.addEventListener("click", () => {
+      fabOptions.classList.toggle("show");
+      fabIcon.classList.toggle("fa-plus");
+      fabIcon.classList.toggle("fa-times");
+    });
+  });
+</script>
 
 	
 	<hr><br>
@@ -813,6 +848,7 @@ Designed by COG in Raleigh Team</a>
 	
 </body>
 </html>
+
 
 
 
