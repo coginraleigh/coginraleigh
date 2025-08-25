@@ -303,7 +303,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
   <div class="team-container">
     <!-- Pastor -->
-    <div class="team-card">
+    <div class="team-card pastor">
       <img src="image/Pr Aben Abraham.jpg" alt="Pr. Aben Abraham" class="team-img">
       <h3>Pr. Aben Abraham</h3>
       <p class="role">Pastor</p>
@@ -404,6 +404,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   text-align: center;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .team-card:hover {
@@ -411,10 +412,9 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   box-shadow: 0 10px 18px rgba(0,0,0,0.25);
 }
 
-/* Headmaster special highlight */
+/* Special Highlight Styles */
 .headmaster {
   border: 3px solid gold;
-  position: relative;
 }
 
 .headmaster::before {
@@ -430,6 +430,26 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   padding: 2px 8px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Pastor Highlight */
+.pastor {
+  border: 3px solid royalblue;
+}
+
+.pastor::before {
+  content: "★ Pastor";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: royalblue;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 /* Images */
@@ -469,11 +489,6 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 <!-- END CSS Styling -->
 
 
-
-
-	
-	
-	
 
 	<div class="location">
 		<h1>OUR LOCATION</h1>
@@ -659,6 +674,7 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
 
