@@ -724,80 +724,61 @@ fullscreenViewer.addEventListener("touchend", e => {
 
 
 <style>
-  /* ================== Logo Glow Section ================== */
+ 
+/* ================== Logo Glow Section ================== */
 .footer-logo-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px 20px 20px;
+  padding: 50px 20px 30px 20px; /* extra padding for bigger logo */
   background-color: #111;
 }
 
 .logo-glow {
-  width: 180px;
+  width: 280px;  /* increased size */
   height: auto;
   animation: gradientGlow 6s infinite alternate ease-in-out;
-  filter: drop-shadow(0 0 10px #ff6a6a) drop-shadow(0 0 15px #ff6a6a);
-}
-
-/* ================== Footer Styling ================== */
-footer {
-  background-color: #111;
-  color: #eee;
-  text-align: center;
-  padding: 30px 20px 50px;
-  position: relative;
-}
-
-.footer-content {
-  max-width: 900px;
-  margin: auto;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.privacy-link {
-  color: #4CAF50;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 8px;
-}
-
-.privacy-link:hover {
-  text-decoration: underline;
+  filter: drop-shadow(0 0 12px #ff6a6a) drop-shadow(0 0 20px #ff6a6a);
 }
 
 /* ================== Gradient Glow Keyframes ================== */
 @keyframes gradientGlow {
   0% {
-    filter: drop-shadow(0 0 8px #ff6a6a) drop-shadow(0 0 12px #ff6a6a);
+    filter: drop-shadow(0 0 12px #ff6a6a) drop-shadow(0 0 18px #ff6a6a);
   }
   25% {
-    filter: drop-shadow(0 0 8px #f0e68c) drop-shadow(0 0 12px #f0e68c);
+    filter: drop-shadow(0 0 12px #f0e68c) drop-shadow(0 0 18px #f0e68c);
   }
   50% {
-    filter: drop-shadow(0 0 10px #6a5acd) drop-shadow(0 0 15px #6a5acd);
+    filter: drop-shadow(0 0 14px #6a5acd) drop-shadow(0 0 20px #6a5acd);
   }
   75% {
-    filter: drop-shadow(0 0 8px #40e0d0) drop-shadow(0 0 12px #40e0d0);
+    filter: drop-shadow(0 0 12px #40e0d0) drop-shadow(0 0 18px #40e0d0);
   }
   100% {
-    filter: drop-shadow(0 0 12px #ff69b4) drop-shadow(0 0 18px #ff69b4);
+    filter: drop-shadow(0 0 16px #ff69b4) drop-shadow(0 0 24px #ff69b4);
   }
 }
 
 /* ================== Responsive ================== */
+@media (max-width: 1024px) {
+  .logo-glow {
+    width: 220px;
+  }
+}
+
 @media (max-width: 768px) {
   .logo-glow {
-    width: 140px;
+    width: 180px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-glow {
-    width: 120px;
+    width: 150px;
   }
 }
+
 </style>
 <!-- ===== FOOTER END ===== -->
 
@@ -956,6 +937,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
