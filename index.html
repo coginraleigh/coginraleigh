@@ -716,39 +716,89 @@ fullscreenViewer.addEventListener("touchend", e => {
 	
     </div>
 	  
-   <div class="divideri"></div>
-
 <!-- ===== FOOTER START ===== -->
-<footer class="footer">
-  <div class="footer-content">
-    <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
-    <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
+<footer id="cont">
+  <div class="footer-row">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img class="footer-logo" src="image/Title  3.svg" alt="Church of God Logo">
+    </div>
+
+    <!-- Footer Text -->
+    <div class="footer-content">
+      <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
+      <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
+    </div>
   </div>
 </footer>
-<!-- ===== FOOTER END ===== -->
 
+<!-- ===== FOOTER CSS ===== -->
 <style>
-  .footer {
-    background: #222;
-    color: #ddd;
-    padding: 20px 20px 40px; /* clean spacing */
+  /* Footer Base */
+  footer {
+    background-color: #111;
+    color: #eee;
+    padding: 25px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  /* Footer Row Layout */
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap; /* stack items on small screens */
+    justify-content: center; /* center content */
+    align-items: center;
+    gap: 20px; /* spacing between logo and text */
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Logo Styling */
+  .footer-logo {
+    max-width: 180px;
+    height: auto;
+  }
+
+  /* Footer Text */
+  .footer-content {
     text-align: center;
     font-size: 14px;
+    line-height: 1.5;
   }
-  .footer p {
-    margin: 0 0 8px 0;
-  }
+
+  /* Privacy Link */
   .privacy-link {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 500;
   }
+
   .privacy-link:hover {
     text-decoration: underline;
   }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column; /* stack logo and text */
+      gap: 15px;
+    }
+    .footer-logo {
+      max-width: 140px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-content {
+      font-size: 13px;
+    }
+    .footer-logo {
+      max-width: 120px;
+    }
+  }
 </style>
-
-
+<!-- ===== FOOTER END ===== -->
 
 <!-- ===== FLOATING CONTACT BUTTONS START ===== -->
 <div class="floating-contact">
@@ -904,6 +954,7 @@ fullscreenViewer.addEventListener("touchend", e => {
 	
 </body>
 </html>
+
 
 
 
