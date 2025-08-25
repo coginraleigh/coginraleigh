@@ -708,45 +708,66 @@ fullscreenViewer.addEventListener("touchend", e => {
 <footer id="cont">
   <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
-    <!-- Logo Section -->
-    <div class="col logo-section">
-      <img class="footerl" src="image/Title  3.svg" alt="">
-	
-    </div>
+  <!-- Logo Section Above Footer -->
+<section class="footer-logo-section">
+  <img class="logo-glow" src="image/Title  3.svg" alt="Church of God Logo">
+</section>
 	  
 <!-- ===== FOOTER START ===== -->
+<!-- Footer Section -->
 <footer>
-  <div class="footer-row">
-    <div class="logo-section">
-      <img class="footer" src="image/Title  3.svg" alt="Church of God Logo">
-    </div>
-    <div class="footer-content">
-      <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
-      <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
-    </div>
+  <div class="footer-content">
+    <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
+    <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
   </div>
 </footer>
 
 
 <style>
-  /* Footer Base */
+  /* ================== Logo Glow Section ================== */
+.footer-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 20px 20px;
+  background-color: #111;
+}
+
+.logo-glow {
+  width: 180px;
+  height: auto;
+  animation: gradientGlow 6s infinite alternate ease-in-out;
+  filter: drop-shadow(0 0 10px #ff6a6a) drop-shadow(0 0 15px #ff6a6a);
+}
+
+/* ================== Footer Styling ================== */
 footer {
   background-color: #111;
   color: #eee;
   text-align: center;
-  padding: 40px 20px 80px;
+  padding: 30px 20px 50px;
+  position: relative;
 }
 
-/* Footer logo with soft color gradient glow */
-img.footer {
-  width: 180px;
-  height: auto;
-  margin-bottom: 15px;
-  animation: gradientGlow 5s infinite alternate ease-in-out;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-/* Gradient Glow Keyframes */
+.privacy-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* ================== Gradient Glow Keyframes ================== */
 @keyframes gradientGlow {
   0% {
     filter: drop-shadow(0 0 8px #ff6a6a) drop-shadow(0 0 12px #ff6a6a);
@@ -765,33 +786,17 @@ img.footer {
   }
 }
 
-/* Responsive Adjustments */
+/* ================== Responsive ================== */
 @media (max-width: 768px) {
-  img.footer {
+  .logo-glow {
     width: 140px;
   }
 }
 
 @media (max-width: 480px) {
-  img.footer {
+  .logo-glow {
     width: 120px;
   }
-}
-
-/* Footer Text & Link */
-.footer-content {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.privacy-link {
-  color: #4CAF50;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.privacy-link:hover {
-  text-decoration: underline;
 }
 </style>
 <!-- ===== FOOTER END ===== -->
@@ -951,6 +956,7 @@ img.footer {
 	
 </body>
 </html>
+
 
 
 
