@@ -234,25 +234,137 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
 
 	
- <section class="slanted-section2" id="meeting">
-      	<center><h2><b>MEETING SCHEDULE</b></h2>
-       <hr class="underline2"><br></center>
-	 
-	 <div class="row"> <div class="col">
-   <center> <div class="table-container">
-        <table>
+ <!-- 🌟 MEETING SCHEDULE -->
+<section class="slanted-section2" id="meeting">
+  <center>
+    <h2><b>MEETING SCHEDULE</b></h2>
+    <hr class="underline2"><br>
+  </center>
+
+  <div class="row">
+    <div class="col">
+      <center>
+        <div class="table-container">
+          <table id="meetingTable">
             <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Time</th>
-                </tr>
+              <tr>
+                <th>Event</th>
+                <th>Time</th>
+              </tr>
             </thead>
             <tbody id="tableBody"></tbody>
-        </table></div>
-   </center> </div> </div>
+          </table>
+          <p id="todayStatus" class="today-status"></p>
+        </div>
+      </center>
+    </div>
+  </div>
+</section>
 
-	 
-    </section>
+<!-- ✅ Stylish CSS -->
+<style>
+.table-container {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 700px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+table th, table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+table th {
+  background: #AD2A0C;
+  color: white;
+  font-size: 16px;
+}
+
+table tr:hover {
+  background-color: #f7f7f7;
+  transition: background 0.3s;
+}
+
+.today-highlight {
+  background: #fff3cd !important;
+  border-left: 5px solid #ff9800;
+  font-weight: bold;
+  position: relative;
+}
+
+.today-highlight::after {
+  content: "Today";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.today-status {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #AD2A0C;
+}
+</style>
+
+<!-- ✅ JavaScript -->
+<script>
+const timings = [
+  { name: "Sunday School", time: "9:45 AM TO 10:30 AM", day: "Sunday" },
+  { name: "Sunday Worship", time: "10:30 AM TO 12:30 PM", day: "Sunday" },
+  { name: "Ladies Meeting", time: "7:00 PM TO 8:00 PM", day: "Thursday" },
+  { name: "Intercessory Prayer", time: "7:00 PM TO 8:00 PM", day: "Friday" },
+  { name: "Youth Meeting", time: "12:00 PM TO 1:00 PM (2nd Sunday)", day: "Sunday" },
+  { name: "Fasting Prayer", time: "7:00 PM TO 8:00 PM (1st Fri & Sat)", day: "Friday" }
+];
+
+const tableBody = document.getElementById("tableBody");
+const todayStatus = document.getElementById("todayStatus");
+
+// Get current day
+const today = new Date();
+const dayName = today.toLocaleString("en-US", { weekday: "long" });
+
+let hasMeetingToday = false;
+
+// Populate table
+timings.forEach(event => {
+  const row = document.createElement("tr");
+  row.innerHTML = `<td>${event.name}</td><td>${event.time}</td>`;
+
+  // Highlight today’s events
+  if (event.day === dayName) {
+    row.classList.add("today-highlight");
+    hasMeetingToday = true;
+  }
+
+  tableBody.appendChild(row);
+});
+
+// Show status below table
+todayStatus.textContent = hasMeetingToday
+  ? `✅ Yes, we have service(s) today (${dayName}).`
+  : `❌ No meetings scheduled today (${dayName}).`;
+</script>
+
 	
 		
  <section class="slanted-section3" id="gal">
@@ -674,6 +786,7 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
 
