@@ -673,171 +673,166 @@ todayStatus.textContent = hasMeetingToday
 	  
    <div class="divideri"></div>
 
-    <!-- ===== CONTACT SECTION START ===== -->
-<section class="contact-section" id="contact">
-  <footer id="cont">
-  <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <!-- Logo Section -->
-    <div class="col logo-section">
-      <img class="footerl" src="image/Title  3.svg" alt="">
-    </div>
+   <!-- ===== FOOTER START ===== -->
+<footer id="cont">
+  <div class="footer-content">
+    <img class="footer-logo" src="image/Title 3.svg" alt="Church of God Raleigh Logo">
+    <hr>
+    <p class="footercopy">© 2025 Church of God Raleigh – All Rights Reserved.</p>
+    <a href="cognc-privacy.html" target="_blank" rel="noopener noreferrer" class="priv">
+      Privacy Statement
+    </a>
   </div>
-
-  <hr><br>
-  <center>
-    <a href="cognc-privacy.html" target="_blank" rel="noopener noreferrer" class="priv">|Privacy Statement|</a>
-    <br><br>
-    <p class="footercopy">Copyright © 2025 Church of God Raleigh - All Rights Reserved.</p><br>
-    <a href="https://wa.me/+917025776935" target="_blank" rel="noopener noreferrer"
-       class="lm" style="display: inline-block; background-color: #D4D4D4; color: #222; padding: 4px 8px;">
-       Designed by COG in Raleigh Team
-    </a>
-  </center><br><br>
 </footer>
+<!-- ===== FOOTER END ===== -->
 
-<!-- ✅ FLOATING CONTACT BUTTONS (moved outside footer to avoid collision) -->
-<div class="floating-container">
-  <button class="fab-main" aria-label="Open contact options">
-    <i class="fas fa-plus"></i>
-  </button>
-  <div class="fab-options">
-    <!-- ✅ WhatsApp -->
-    <a id="whatsapp-link" class="fab-btn whatsapp" aria-label="Chat on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-      <span class="tooltip">WhatsApp</span>
+<!-- ===== FLOATING CONTACT BUTTONS START ===== -->
+<div class="floating-contact">
+  <button class="contact-toggle" aria-label="Contact Options">✉️</button>
+  <div class="contact-options">
+    <a href="https://wa.me/+19843085394" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-
-    <!-- ✅ Email -->
-    <a href="mailto:churchofgodraleigh@gmail.com?subject=Hello%20Church%20of%20God%20Raleigh&body=Hi,%0D%0A%0D%0AI would like to get in touch with you."
-       class="fab-btn email" aria-label="Send us an Email">
-      <i class="fas fa-envelope"></i>
-      <span class="tooltip">Email</span>
+    <a href="mailto:churchofgodraleigh@gmail.com" aria-label="Send Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
+  </div>
+</div>
+<!-- ===== FLOATING CONTACT BUTTONS START ===== -->
+<div class="floating-contact">
+  <button class="floating-toggle" id="contactToggle" aria-label="Open contact options">✉️</button>
+  <div class="contact-options" id="contactOptions" aria-hidden="true">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/19843085394?text=Hi%20Church%20of%20God%20Raleigh,%20I%20would%20love%20to%20know%20more%20about%20your%20services%20🙏"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon" loading="lazy">
+    </a>
+    <!-- Email -->
+    <a href="mailto:churchofgodraleigh@gmail.com?subject=Connect%20with%20Church%20of%20God%20Raleigh&body=Hello%20Church%20of%20God%20Raleigh,%0D%0A%0D%0AI%20would%20like%20to%20connect%20with%20you."
+       aria-label="Send Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" loading="lazy">
     </a>
   </div>
 </div>
 
 <style>
-  .floating-container {
+  /* Floating Contact Container */
+  .floating-contact {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    z-index: 2000;
   }
-  .fab-main {
+
+  /* Toggle Button */
+  .floating-toggle {
     width: 60px;
     height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
     border-radius: 50%;
-    background: #333;
-    color: #fff;
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
+    outline: none;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    font-size: 26px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
     animation: pulse 2s infinite;
   }
-  .fab-main:hover { transform: rotate(90deg) scale(1.1); }
-  .fab-options {
+
+  .floating-toggle:active {
+    transform: scale(0.92);
+  }
+
+  /* Contact Options */
+  .contact-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-  }
-  .fab-options.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  .fab-btn {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
     align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease, background 0.3s;
-  }
-  .fab-btn:hover { transform: scale(1.15); }
-  .fab-btn.whatsapp { background: #25D366; }
-  .fab-btn.email { background: #D44638; }
-  .fab-btn .tooltip {
-    position: absolute;
-    right: 60px;
-    background: #222;
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 14px;
+
+    /* Animation */
+    max-height: 0;
     opacity: 0;
-    white-space: nowrap;
-    transform: translateX(10px);
-    transition: all 0.3s ease;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    transform: translateY(20px);
     pointer-events: none;
   }
-  .fab-btn:hover .tooltip {
+
+  .contact-options.show {
+    max-height: 200px;
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+    pointer-events: auto;
   }
+
+  .contact-options a img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease-in-out;
+    background: #fff;
+    padding: 6px;
+  }
+
+  .contact-options a img:active {
+    transform: scale(0.9);
+  }
+
+  /* Pulse Animation */
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
-    70% { box-shadow: 0 0 0 15px rgba(0,0,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
   }
-  @media (min-width: 769px) {
-    .fab-options {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateY(0) !important;
-      flex-direction: row;
-      margin-bottom: 0;
+
+  /* Mobile Optimization */
+  @media (max-width: 480px) {
+    .floating-toggle {
+      width: 55px;
+      height: 55px;
+      font-size: 22px;
     }
-    .fab-main { display: none; }
+    .contact-options a img {
+      width: 48px;
+      height: 48px;
+    }
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const fabMain = document.querySelector(".fab-main");
-    const fabOptions = document.querySelector(".fab-options");
-    const fabIcon = fabMain.querySelector("i");
-    const whatsappLink = document.getElementById("whatsapp-link");
+  (function () {
+    const toggleBtn = document.getElementById("contactToggle");
+    const contactOptions = document.getElementById("contactOptions");
+    let autoCloseTimer;
 
-    const phoneNumber = "19843085394"; // ✅ Change if needed
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      whatsappLink.href = `https://wa.me/${phoneNumber}`;
-    } else {
-      whatsappLink.href = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
-      whatsappLink.target = "_blank";
-      whatsappLink.rel = "noopener noreferrer";
-    }
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = contactOptions.classList.toggle("show");
+      contactOptions.setAttribute("aria-hidden", !isOpen);
 
-    fabMain.addEventListener("click", () => {
-      fabOptions.classList.toggle("show");
-      fabIcon.classList.toggle("fa-plus");
-      fabIcon.classList.toggle("fa-times");
+      clearTimeout(autoCloseTimer);
+      if (isOpen) {
+        autoCloseTimer = setTimeout(() => {
+          contactOptions.classList.remove("show");
+          contactOptions.setAttribute("aria-hidden", "true");
+        }, 5000);
+      }
     });
-  });
+  })();
 </script>
+<!-- ===== FLOATING CONTACT BUTTONS END ===== -->
+
  
 
 	
 </body>
 </html>
+
 
 
 
