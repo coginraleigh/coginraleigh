@@ -304,14 +304,14 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="row">
     <!-- Pastor -->
     <div class="col">
-      <img src="image/Pr Aben Abraham.jpg" alt="Pr. Aben Abraham" width="70%">
+      <img src="image/Pr Aben Abraham.jpg" alt="Pr. Aben Abraham" class="team-img">
       <h3>Pr. Aben Abraham</h3>
       <p>Pastor</p>
     </div>
 
     <!-- Worship & Youth -->
     <div class="col"> 
-      <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" width="70%">
+      <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
       <h3>Br. Vinson Thomas</h3>
       <p>
         Praise & Worship Leader <br>
@@ -322,7 +322,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
     <!-- Musician -->
     <div class="col">
-      <img src="image/Jeremy Aben.jpg" alt="Br. Jeremy Aben" width="70%">
+      <img src="image/Jeremy Aben.jpg" alt="Br. Jeremy Aben" class="team-img">
       <h3>Br. Jeremy Aben</h3>
       <p>Keyboardist</p>
     </div>
@@ -331,7 +331,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="row">
     <!-- Women’s Fellowship -->
     <div class="col"> 
-      <img src="image/Sis. Rini John LM.jpg" alt="Sis. Rini John" width="70%">
+      <img src="image/Sis. Rini John LM.jpg" alt="Sis. Rini John" class="team-img">
       <h3>Sis. Rini John</h3>
       <p>Women’s Fellowship Lead</p>
     </div>
@@ -349,19 +349,53 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="row">
     <!-- Teacher 1 -->
     <div class="col">
-      <img src="image/Justy.jpg" alt="Sis. Justy Koshy" width="70%">
+      <img src="image/Justy.jpg" alt="Sis. Justy Koshy" class="team-img">
       <h3>Sis. Justy Koshy</h3>
       <p>Sunday School Teacher</p>
     </div>	
 
     <!-- Teacher 2 -->
     <div class="col"> 
-      <img src="image/Rini.jpg" alt="Sis. Rini John" width="70%">
+      <img src="image/Rini.jpg" alt="Sis. Rini John" class="team-img">
       <h3>Sis. Rini John</h3>
       <p>Sunday School Teacher</p>
     </div>
   </div>
 </section>
+
+
+<!-- ✅ CSS for Team & Teachers -->
+<style>
+/* Team Section */
+.team, .team2 {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Member Images */
+.team-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;   /* crop neatly */
+  border-radius: 50%;  /* round profile style */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-img:hover {
+  transform: scale(1.05); /* small zoom on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-img {
+    width: 140px;
+    height: 140px;
+  }
+}
+</style>
+
 
 	
 	
@@ -551,5 +585,6 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
