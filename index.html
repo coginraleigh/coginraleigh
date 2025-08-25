@@ -234,7 +234,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 
 
 	
- <!-- 🌟 MEETING SCHEDULE -->
+<!-- 🌟 MEETING SCHEDULE -->
 <section class="slanted-section2" id="meeting">
   <center>
     <h2><b>MEETING SCHEDULE</b></h2>
@@ -248,6 +248,7 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
           <table id="meetingTable">
             <thead>
               <tr>
+                <th>Day</th>
                 <th>Event</th>
                 <th>Time</th>
               </tr>
@@ -260,13 +261,15 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     </div>
   </div>
 </section>
+<!-- END MEETING SCHEDULE -->
 
 <!-- ✅ Stylish CSS -->
 <style>
+/* === Meeting Schedule Styles START === */
 .table-container {
   margin-top: 20px;
-  width: 90%;
-  max-width: 700px;
+  width: 95%;
+  max-width: 800px;
 }
 
 table {
@@ -296,6 +299,15 @@ table tr:hover {
   transition: background 0.3s;
 }
 
+/* Group header row */
+.day-header {
+  background: #f1f1f1;
+  font-weight: bold;
+  font-size: 15px;
+  color: #AD2A0C;
+  text-transform: uppercase;
+}
+
 .today-highlight {
   background: #fff3cd !important;
   border-left: 5px solid #ff9800;
@@ -323,47 +335,68 @@ table tr:hover {
   font-weight: bold;
   color: #AD2A0C;
 }
+/* === Meeting Schedule Styles END === */
 </style>
+<!-- END CSS MEETING SCHEDULE -->
 
 <!-- ✅ JavaScript -->
 <script>
+/* === Meeting Schedule Script START === */
 const timings = [
-  { name: "Sunday School", time: "9:45 AM TO 10:30 AM", day: "Sunday" },
-  { name: "Sunday Worship", time: "10:30 AM TO 12:30 PM", day: "Sunday" },
-  { name: "Ladies Meeting", time: "7:00 PM TO 8:00 PM", day: "Thursday" },
-  { name: "Intercessory Prayer", time: "7:00 PM TO 8:00 PM", day: "Friday" },
-  { name: "Youth Meeting", time: "12:00 PM TO 1:00 PM (2nd Sunday)", day: "Sunday" },
-  { name: "Fasting Prayer", time: "7:00 PM TO 8:00 PM (1st Fri & Sat)", day: "Friday" }
+  { name: "Sunday School", day: "Sunday", time: "9:45 AM TO 10:30 AM" },
+  { name: "Sunday Worship", day: "Sunday", time: "10:30 AM TO 12:30 PM" },
+  { name: "Youth Meeting", day: "Sunday", time: "12:00 PM TO 1:00 PM (2nd Sunday)" },
+  { name: "Ladies Meeting", day: "Thursday", time: "7:00 PM TO 8:00 PM" },
+  { name: "Intercessory Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM" },
+  { name: "Fasting Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM (1st Fri & Sat)" }
 ];
+
+// Group events by day
+const grouped = {};
+timings.forEach(event => {
+  if (!grouped[event.day]) grouped[event.day] = [];
+  grouped[event.day].push(event);
+});
 
 const tableBody = document.getElementById("tableBody");
 const todayStatus = document.getElementById("todayStatus");
 
-// Get current day
+// Current day
 const today = new Date();
 const dayName = today.toLocaleString("en-US", { weekday: "long" });
 
 let hasMeetingToday = false;
 
-// Populate table
-timings.forEach(event => {
-  const row = document.createElement("tr");
-  row.innerHTML = `<td>${event.name}</td><td>${event.time}</td>`;
+// Insert rows by group
+Object.keys(grouped).forEach(day => {
+  // Day header row
+  const dayRow = document.createElement("tr");
+  dayRow.classList.add("day-header");
+  dayRow.innerHTML = `<td colspan="3">${day}</td>`;
+  tableBody.appendChild(dayRow);
 
-  // Highlight today’s events
-  if (event.day === dayName) {
-    row.classList.add("today-highlight");
-    hasMeetingToday = true;
-  }
+  // Events under this day
+  grouped[day].forEach(event => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${event.time}</td>`;
 
-  tableBody.appendChild(row);
+    // Highlight today
+    if (event.day === dayName) {
+      row.classList.add("today-highlight");
+      hasMeetingToday = true;
+    }
+    tableBody.appendChild(row);
+  });
 });
 
-// Show status below table
+// Show status message
 todayStatus.textContent = hasMeetingToday
   ? `✅ Yes, we have service(s) today (${dayName}).`
   : `❌ No meetings scheduled today (${dayName}).`;
+/* === Meeting Schedule Script END === */
 </script>
+<!-- END JS MEETING SCHEDULE -->
+
 
 	
 		
@@ -786,6 +819,7 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
 
