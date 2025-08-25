@@ -715,14 +715,11 @@ fullscreenViewer.addEventListener("touchend", e => {
     </div>
 	  
 <!-- ===== FOOTER START ===== -->
-<footer id="cont">
+<footer>
   <div class="footer-row">
-    <!-- Logo Section -->
     <div class="logo-section">
-      <img class="footer-logo" src="image/Title 3.svg" alt="Church of God Logo">
+      <img class="footer" src="image/Title  3.svg" alt="Church of God Logo">
     </div>
-
-    <!-- Footer Text -->
     <div class="footer-content">
       <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
       <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
@@ -730,55 +727,72 @@ fullscreenViewer.addEventListener("touchend", e => {
   </div>
 </footer>
 
+
 <style>
-  footer {
-    background-color: #111;
-    color: #eee;
-    padding: 25px 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+  /* Footer Base */
+footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 40px 20px 80px;
+}
 
-  .footer-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+/* Footer logo with soft color gradient glow */
+img.footer {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: gradientGlow 5s infinite alternate ease-in-out;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
 
-  .footer-logo {
-    max-width: 180px;
-    height: auto;
+/* Gradient Glow Keyframes */
+@keyframes gradientGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #ff6a6a) drop-shadow(0 0 12px #ff6a6a);
   }
+  25% {
+    filter: drop-shadow(0 0 8px #f0e68c) drop-shadow(0 0 12px #f0e68c);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #6a5acd) drop-shadow(0 0 15px #6a5acd);
+  }
+  75% {
+    filter: drop-shadow(0 0 8px #40e0d0) drop-shadow(0 0 12px #40e0d0);
+  }
+  100% {
+    filter: drop-shadow(0 0 12px #ff69b4) drop-shadow(0 0 18px #ff69b4);
+  }
+}
 
-  .footer-content {
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.5;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  img.footer {
+    width: 140px;
   }
+}
 
-  .privacy-link {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: 500;
+@media (max-width: 480px) {
+  img.footer {
+    width: 120px;
   }
+}
 
-  .privacy-link:hover {
-    text-decoration: underline;
-  }
+/* Footer Text & Link */
+.footer-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-  @media (max-width: 768px) {
-    .footer-row { flex-direction: column; gap: 15px; }
-    .footer-logo { max-width: 140px; }
-  }
+.privacy-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-  @media (max-width: 480px) {
-    .footer-content { font-size: 13px; }
-    .footer-logo { max-width: 120px; }
-  }
+.privacy-link:hover {
+  text-decoration: underline;
+}
 </style>
 <!-- ===== FOOTER END ===== -->
 
@@ -937,6 +951,7 @@ fullscreenViewer.addEventListener("touchend", e => {
 	
 </body>
 </html>
+
 
 
 
