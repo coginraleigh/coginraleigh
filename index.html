@@ -105,52 +105,51 @@
         <div class="marquee-text">Praise the Lord! NORTH CAROLINA ലെ  RALEIGH പട്ടണത്തിൽ ദൈവത്തെ സത്യത്തിലും ആത്മാവിലും ആരാധിപ്പാൻ ഒരു കൂട്ടായ്മ.</div>
     </div>	
 		
-<!-- Place the Verse of the Day section here -->
+<!-- 🌟 Verse of the Day Section -->
 <section class="verse-of-day">
   <div class="verse-container">
     <h2>Verse of the Day</h2>
-    <hr class="underline2">
-    <p id="verseEnglish">Loading English verse...</p>
-    <p id="verseMalayalam" style="font-family:'Noto Sans Malayalam', sans-serif;">Loading Malayalam verse...</p>
+    <div class="underline2"></div>
+    <p id="verseEnglish">Loading verse...</p>
+    <p id="verseMalayalam"></p>
     <p id="verseReference"></p>
   </div>
 </section>
+
 <script>
-const verses = [
-  {
-    english: "The Lord is my shepherd; I shall not want.",
-    malayalam: "ആകാശകർത്താവാണ് എന്റെ ചങ്ങാതി; എനിക്ക് കുറവൊന്നുമില്ല.",
-    reference: "Psalm 23:1"
-  },
-  {
-    english: "For I know the plans I have for you, declares the Lord.",
-    malayalam: "നീങ്ങൾക്കായുള്ള പദ്ധതികൾ ഞാൻ അറിയുന്നു, എങ്കിൽ താങ്കൾക്കു ഭയം വേണ്ട, എന്നു കർത്താവ് പറയുന്നു.",
-    reference: "Jeremiah 29:11"
-  },
-  {
-    english: "I can do all things through Christ who strengthens me.",
-    malayalam: "എന്നെ ശക്തിപ്പെടുത്തുന്ന ക്രിസ്തുവിലൂടെ ഞാൻ എല്ലാം ചെയ്യാൻ കഴിയും.",
-    reference: "Philippians 4:13"
-  },
-  {
-    english: "Trust in the Lord with all your heart and lean not on your own understanding.",
-    malayalam: "നിന്റെ മുഴുവൻ ഹൃദയത്തോടും കർത്താവിൽ വിശ്വസിക്ക, നിന്റെ ബുദ്ധിയിലൊന്നും ആശ്രയിക്കരുത്.",
-    reference: "Proverbs 3:5"
-  },
-  {
-    english: "But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
-    malayalam: "അവന്റെ രാജ്യം ആദ്യം അന്വേഷിക്കുകയും അവന്റെ നീതിയെ അഭ്യസിക്കുകയും ചെയ്യുക, പിന്നീടെ ഈ എല്ലാ കാര്യങ്ങളും നിങ്ങൾക്കു ലഭിക്കും.",
-    reference: "Matthew 6:33"
+  // ===== 365 Verses Array for 2025 =====
+  const verses2025 = [
+    {english:"The Lord is my shepherd; I shall not want.", malayalam:"ആകാശകർത്താവാണ് എന്റെ ചങ്ങാതി; എനിക്ക് കുറവൊന്നുമില്ല.", reference:"Psalm 23:1"},
+    {english:"For I know the plans I have for you, declares the Lord.", malayalam:"നീങ്ങൾക്കായുള്ള പദ്ധതികൾ ഞാൻ അറിയുന്നു, എന്നു കർത്താവ് പറയുന്നു.", reference:"Jeremiah 29:11"},
+    {english:"I can do all things through Christ who strengthens me.", malayalam:"എന്നെ ശക്തിപ്പെടുത്തുന്ന ക്രിസ്തുവിലൂടെ ഞാൻ എല്ലാം ചെയ്യാൻ കഴിയും.", reference:"Philippians 4:13"},
+    {english:"Trust in the Lord with all your heart and lean not on your own understanding.", malayalam:"നിന്റെ മുഴുവൻ ഹൃദയത്തോടും കർത്താവിൽ വിശ്വസിക്ക, നിന്റെ ബുദ്ധിയിലൊന്നും ആശ്രയിക്കരുത്.", reference:"Proverbs 3:5"},
+    {english:"But seek first His kingdom and His righteousness, and all these things will be given to you as well.", malayalam:"അവന്റെ രാജ്യം ആദ്യം അന്വേഷിക്കുകയും അവന്റെ നീതിയെ അഭ്യസിക്കുകയും ചെയ്യുക, പിന്നീടെ ഈ എല്ലാ കാര്യങ്ങളും നിങ്ങൾക്കു ലഭിക്കും.", reference:"Matthew 6:33"},
+    // ... continue adding all 365 verses here in the same format
+  ];
+
+  // ===== Secure function to get verse of the day =====
+  function getVerseOfDay() {
+    const today = new Date();
+    const startOfYear = new Date(today.getFullYear(), 0, 0);
+    const diff = today - startOfYear;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    // Ensure index is within array bounds
+    const index = dayOfYear % verses2025.length;
+
+    const verse = verses2025[index];
+
+    // Set content
+    document.getElementById("verseEnglish").textContent = `"${verse.english}"`;
+    document.getElementById("verseMalayalam").textContent = verse.malayalam || "";
+    document.getElementById("verseReference").textContent = verse.reference;
   }
-];
 
-const today = new Date();
-const index = today.getDate() % verses.length;
-
-document.getElementById("verseEnglish").textContent = `"${verses[index].english}"`;
-document.getElementById("verseMalayalam").textContent = `"${verses[index].malayalam}"`;
-document.getElementById("verseReference").textContent = verses[index].reference;
+  // Call function on page load
+  getVerseOfDay();
 </script>
+
 
 	
 	<section class="content" id="about">
@@ -1059,6 +1058,7 @@ document.getElementById("verseReference").textContent = verses[index].reference;
 	
 </body>
 </html>
+
 
 
 
