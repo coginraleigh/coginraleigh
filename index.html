@@ -674,17 +674,35 @@ todayStatus.textContent = hasMeetingToday
    <div class="divideri"></div>
 
 <!-- ===== FOOTER START ===== -->
-<footer id="cont">
+<footer class="footer">
   <div class="footer-content">
-    <img class="footer-logo" src="image/Title 3.svg" alt="Church of God Raleigh Logo">
-    <hr>
-    <p class="footercopy">© 2025 Church of God Raleigh – All Rights Reserved.</p>
-    <a href="cognc-privacy.html" target="_blank" rel="noopener noreferrer" class="priv">
-      Privacy Statement
-    </a>
+    <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
+    <a href="/privacy" class="privacy-link">Privacy Statement</a>
   </div>
 </footer>
 <!-- ===== FOOTER END ===== -->
+
+<style>
+  .footer {
+    background: #222;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .footer p {
+    margin: 0 0 8px 0;
+  }
+  .privacy-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .privacy-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
 
 <!-- ===== FLOATING CONTACT BUTTONS START ===== -->
 <div class="floating-contact">
@@ -840,6 +858,7 @@ todayStatus.textContent = hasMeetingToday
 	
 </body>
 </html>
+
 
 
 
