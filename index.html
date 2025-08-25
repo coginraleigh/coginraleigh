@@ -358,6 +358,9 @@ timings.forEach(event => {
   grouped[event.day].push(event);
 });
 
+// Weekly order
+const weeklyOrder = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
 const tableBody = document.getElementById("tableBody");
 const todayStatus = document.getElementById("todayStatus");
 
@@ -367,26 +370,28 @@ const dayName = today.toLocaleString("en-US", { weekday: "long" });
 
 let hasMeetingToday = false;
 
-// Insert rows by group
-Object.keys(grouped).forEach(day => {
-  // Day header row
-  const dayRow = document.createElement("tr");
-  dayRow.classList.add("day-header");
-  dayRow.innerHTML = `<td colspan="3">${day}</td>`;
-  tableBody.appendChild(dayRow);
+// Insert rows by weekly order
+weeklyOrder.forEach(day => {
+  if (grouped[day]) {
+    // Day header row
+    const dayRow = document.createElement("tr");
+    dayRow.classList.add("day-header");
+    dayRow.innerHTML = `<td colspan="3">${day}</td>`;
+    tableBody.appendChild(dayRow);
 
-  // Events under this day
-  grouped[day].forEach(event => {
-    const row = document.createElement("tr");
-    row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${event.time}</td>`;
+    // Events under this day
+    grouped[day].forEach(event => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${event.time}</td>`;
 
-    // Highlight today
-    if (event.day === dayName) {
-      row.classList.add("today-highlight");
-      hasMeetingToday = true;
-    }
-    tableBody.appendChild(row);
-  });
+      // Highlight today
+      if (event.day === dayName) {
+        row.classList.add("today-highlight");
+        hasMeetingToday = true;
+      }
+      tableBody.appendChild(row);
+    });
+  }
 });
 
 // Show status message
@@ -396,6 +401,7 @@ todayStatus.textContent = hasMeetingToday
 /* === Meeting Schedule Script END === */
 </script>
 <!-- END JS MEETING SCHEDULE -->
+
 
 
 	
@@ -819,6 +825,7 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
 
