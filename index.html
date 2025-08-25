@@ -11,8 +11,6 @@
 <style>
 	
 
-	
- 
     .contact {
         text-align: center;
 		color:#fff;
@@ -32,6 +30,44 @@
 	}
 </style>	
 
+	<style>
+	.verse-of-day {
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.verse-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #AD2A0C;
+}
+
+.verse-container .underline2 {
+  width: 60px;
+  height: 3px;
+  background-color: #AD2A0C;
+  margin: 0 auto 20px;
+}
+
+.verse-container p {
+  font-size: 18px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 8px;
+  line-height: 1.6;
+}
+
+.verse-container #verseReference {
+  font-weight: bold;
+  color: #AD2A0C;
+}
+
+  </style>
 	<!-- ✅ Add this line for Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -69,7 +105,8 @@
         <div class="marquee-text">Praise the Lord! NORTH CAROLINA ലെ  RALEIGH പട്ടണത്തിൽ ദൈവത്തെ സത്യത്തിലും ആത്മാവിലും ആരാധിപ്പാൻ ഒരു കൂട്ടായ്മ.</div>
     </div>	
 		
-
+<!-- Place the Verse of the Day section here -->
+<section class="verse-of-day"> ... </section>
 	
  <section class="slanted-section">
      <img class="simg1" src="image/Title  3.svg" alt="">
@@ -942,10 +979,47 @@ footer {
 
 
  
+<script>
+const verses = [
+  {
+    english: "The Lord is my shepherd; I shall not want.",
+    malayalam: "ആകാശകർത്താവാണ് എന്റെ ചങ്ങാതി; എനിക്ക് കുറവൊന്നുമില്ല.",
+    reference: "Psalm 23:1"
+  },
+  {
+    english: "For I know the plans I have for you, declares the Lord.",
+    malayalam: "നീങ്ങൾക്കായുള്ള പദ്ധതികൾ ഞാൻ അറിയുന്നു, എങ്കിൽ താങ്കൾക്കു ഭയം വേണ്ട, എന്നു കർത്താവ് പറയുന്നു.",
+    reference: "Jeremiah 29:11"
+  },
+  {
+    english: "I can do all things through Christ who strengthens me.",
+    malayalam: "എന്നെ ശക്തിപ്പെടുത്തുന്ന ക്രിസ്തുവിലൂടെ ഞാൻ എല്ലാം ചെയ്യാൻ കഴിയും.",
+    reference: "Philippians 4:13"
+  },
+  {
+    english: "Trust in the Lord with all your heart and lean not on your own understanding.",
+    malayalam: "നിന്റെ മുഴുവൻ ഹൃദയത്തോടും കർത്താവിൽ വിശ്വസിക്ക, നിന്റെ ബുദ്ധിയിലൊന്നും ആശ്രയിക്കരുത്.",
+    reference: "Proverbs 3:5"
+  },
+  {
+    english: "But seek first His kingdom and His righteousness, and all these things will be given to you as well.",
+    malayalam: "അവന്റെ രാജ്യം ആദ്യം അന്വേഷിക്കുകയും അവന്റെ നീതിയെ അഭ്യസിക്കുകയും ചെയ്യുക, പിന്നീടെ ഈ എല്ലാ കാര്യങ്ങളും നിങ്ങൾക്കു ലഭിക്കും.",
+    reference: "Matthew 6:33"
+  }
+];
+
+const today = new Date();
+const index = today.getDate() % verses.length;
+
+document.getElementById("verseEnglish").textContent = `"${verses[index].english}"`;
+document.getElementById("verseMalayalam").textContent = `"${verses[index].malayalam}"`;
+document.getElementById("verseReference").textContent = verses[index].reference;
+</script>
 
 	
 </body>
 </html>
+
 
 
 
