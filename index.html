@@ -301,39 +301,35 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <hr class="underline2">
   </div>
 
-  <div class="row">
+  <div class="team-container">
     <!-- Pastor -->
-    <div class="col">
+    <div class="team-card">
       <img src="image/Pr Aben Abraham.jpg" alt="Pr. Aben Abraham" class="team-img">
       <h3>Pr. Aben Abraham</h3>
-      <p>Pastor</p>
+      <p class="role">Pastor</p>
     </div>
 
     <!-- Worship & Youth -->
-    <div class="col"> 
+    <div class="team-card"> 
       <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
       <h3>Br. Vinson Thomas</h3>
-      <p>
-        Praise & Worship Leader <br>
-        Youth Fellowship (YPE) Lead <br>
-        Sunday School Headmaster
-      </p>
+      <p class="role">Praise & Worship Leader</p>
+      <p class="role">Youth Fellowship (YPE) Lead</p>
+      <p class="role">Sunday School Headmaster</p>
     </div>
 
     <!-- Musician -->
-    <div class="col">
+    <div class="team-card">
       <img src="image/Jeremy Aben.jpg" alt="Br. Jeremy Aben" class="team-img">
       <h3>Br. Jeremy Aben</h3>
-      <p>Keyboardist</p>
+      <p class="role">Keyboardist</p>
     </div>
-  </div>
 
-  <div class="row">
     <!-- Women’s Fellowship -->
-    <div class="col"> 
+    <div class="team-card"> 
       <img src="image/Sis. Rini John LM.jpg" alt="Sis. Rini John" class="team-img">
       <h3>Sis. Rini John</h3>
-      <p>Women’s Fellowship Lead</p>
+      <p class="role">Women’s Fellowship Lead</p>
     </div>
   </div>
 </section>
@@ -346,55 +342,113 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <hr class="underline2">
   </div>
 
-  <div class="row">
+  <div class="team-container">
     <!-- Teacher 1 -->
-    <div class="col">
+    <div class="team-card">
       <img src="image/Justy.jpg" alt="Sis. Justy Koshy" class="team-img">
       <h3>Sis. Justy Koshy</h3>
-      <p>Sunday School Teacher</p>
+      <p class="role">Sunday School Teacher</p>
     </div>	
 
     <!-- Teacher 2 -->
-    <div class="col"> 
+    <div class="team-card"> 
       <img src="image/Rini.jpg" alt="Sis. Rini John" class="team-img">
       <h3>Sis. Rini John</h3>
-      <p>Sunday School Teacher</p>
+      <p class="role">Sunday School Teacher</p>
     </div>
   </div>
 </section>
 
 
-<!-- ✅ CSS for Team & Teachers -->
+<!-- ✅ Stylish CSS -->
 <style>
-/* Team Section */
+/* General Section Styling */
 .team, .team2 {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+}
+
+.title h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.underline2 {
+  width: 70px;
+  height: 4px;
+  background-color: #AD2A0C;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+/* Container for flexible layout */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Individual Cards */
+.team-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
 
 /* Member Images */
 .team-img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;   /* crop neatly */
-  border-radius: 50%;  /* round profile style */
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
   margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 4px solid #AD2A0C;
   transition: transform 0.3s ease;
 }
 
-.team-img:hover {
-  transform: scale(1.05); /* small zoom on hover */
+.team-card:hover .team-img {
+  transform: scale(1.08);
+}
+
+/* Names & Roles */
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 3px 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .team-card {
+    width: 90%;
+  }
   .team-img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
   }
 }
 </style>
+
 
 
 	
@@ -585,6 +639,7 @@ function scrollToTop() {
 	
 </body>
 </html>
+
 
 
 
