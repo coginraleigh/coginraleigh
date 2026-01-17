@@ -103,7 +103,29 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="text-center">
     <h2><b>UPCOMING EVENTS</b></h2>
     <hr class="underline2"><br>
-    <p style="font-size: 1.2rem; color: #666;">Stay tuned! More events coming soon.</p>
+<!--  <p style="font-size: 1.2rem; color: #666;">Stay tuned! More events coming soon.</p> -->
+<!-- 🔔 Upcoming: January 2026 Fasting Prayer -->
+<div id="upcoming-jan-2026">
+
+  <div class="special-event-card">
+    <img src="image/January 2026 Meeting.jpg" class="event-img" alt="Special Fasting Prayer">
+
+    <h3>Special Fasting Prayer</h3>
+    <p>📅 26 – 31 January 2026</p>
+    <p>⏰ Daily | 7:30 PM – 8:30 PM (US ET)</p>
+
+    <div id="countdown"></div>
+
+    <p>📍 Zoom Meeting</p>
+    <p>Meeting ID: <b>336-436-5356</b></p>
+
+    <a href="https://zoom.us/j/3364365356" target="_blank" class="zoom-btn">
+      Join Zoom
+    </a>
+  </div>
+
+</div>
+
   </div>
 
   <!-- 🔽 PAST EVENTS SECTION -->
@@ -111,6 +133,27 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <h2><b>PAST EVENTS</b></h2>
     <hr class="underline2"><br>
   </div>
+<!-- 📂 Past Events: January 2026 -->
+<div class="event-dropdown">
+
+  <button class="dropdown-btn" onclick="toggleDropdown('jan2026')">
+    January 2026
+  </button>
+
+  <div class="dropdown-content" id="jan2026">
+
+    <div id="past-jan-2026" class="special-event-card" style="display:none;">
+      <img src="image/January 2026 Meeting.jpg"
+           class="event-img"
+           alt="Special Fasting Prayer January 2026">
+
+      <h3>Special Fasting Prayer</h3>
+      <p>📅 26 – 31 January 2026</p>
+      <p>⏰ Daily | 7:30 PM – 8:30 PM (US ET)</p>
+        </div>
+
+  </div>
+</div>
 
   <!-- 🔽 PAST EVENTS DROPDOWN (Compact Toggle) -->
   <div class="event-dropdown">
@@ -1142,11 +1185,93 @@ footer {
 
 
 
- 
+ <script>
+/* ⏳ Countdown */
+const startDate = new Date("January 26, 2026 19:30:00").getTime();
+const endDate = new Date("February 1, 2026 00:00:00").getTime();
+
+const countdown = document.getElementById("countdown");
+const upcoming = document.getElementById("upcoming-jan-2026");
+const past = document.getElementById("past-jan-2026");
+
+function updateEventState() {
+  const now = new Date().getTime();
+
+  /* After Jan 31 → move to Past Events */
+  if (now >= endDate) {
+    if (upcoming) upcoming.style.display = "none";
+    if (past) past.style.display = "block";
+    return;
+  }
+
+  /* Countdown */
+  const diff = startDate - now;
+  if (diff <= 0) {
+    countdown.innerHTML = "🔥 Event is Live!";
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  countdown.innerHTML = `Starts in ${d}d ${h}h ${m}m ${s}s`;
+}
+
+setInterval(updateEventState, 1000);
+updateEventState();
+</script>
+<!-- ================== STEP 4: EVENT CARD STYLES ================== -->
+<style>
+.special-event-card {
+  max-width: 420px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.event-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+#countdown {
+  margin: 12px 0;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  background: #AD2A0C;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.zoom-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #2D8CFF;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.zoom-btn:hover {
+  background: #1c6fe3;
+}
+</style>
+<!-- ================== END STEP 4 ================== -->
+
 
 	
 </body>
 </html>
+
 
 
 
