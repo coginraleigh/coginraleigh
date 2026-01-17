@@ -108,9 +108,13 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
 <div id="upcoming-jan-2026">
 
   <div class="special-event-card">
-  <div class="event-img-wrap">
-    <img src="image/January 2026 Meeting.jpg" alt="Special Fasting Prayer">
-  </div>
+ <div class="event-img-wrap">
+  <img src="image/January 2026 Meeting.jpg"
+       alt="Special Fasting Prayer"
+       class="event-click-img"
+       onclick="openEventFullscreen(this)">
+</div>
+
 
   <div class="event-details-wrap">
     <h3>Special Fasting Prayer</h3>
@@ -139,9 +143,13 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
   <div class="dropdown-content" id="jan2026">
 
     <div id="past-jan-2026" class="special-event-card" style="display:none;">
-  <div class="event-img-wrap">
-    <img src="image/January 2026 Meeting.jpg" alt="Special Fasting Prayer">
-  </div>
+<div class="event-img-wrap">
+  <img src="image/January 2026 Meeting.jpg"
+       alt="Special Fasting Prayer"
+       class="event-click-img"
+       onclick="openEventFullscreen(this)">
+</div>
+
 
   <div class="event-details-wrap">
     <h3>Special Fasting Prayer</h3>
@@ -1305,15 +1313,85 @@ updateEventState();
   background: #1c6fe3;
 }
 
+	/* ============ EVENT FULLSCREEN VIEW ============ */
+
+.event-fullscreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.event-fullscreen img {
+  max-width: 95%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Close button */
+.event-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 38px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Cursor hint */
+.event-click-img {
+  cursor: zoom-in;
+}
+
 </style>
 
 
 <!-- ================== END STEP 4 ================== -->
 
+	  
 
-	
+<!-- ================= EVENT IMAGE FULLSCREEN ================= -->
+<div id="eventFullscreen" class="event-fullscreen" aria-hidden="true">
+  <span class="event-close" onclick="closeEventFullscreen()">&times;</span>
+  <img id="eventFullscreenImg" src="" alt="Event Fullscreen">
+</div>
+
+
+	  <script>
+function openEventFullscreen(img) {
+  const viewer = document.getElementById("eventFullscreen");
+  const viewerImg = document.getElementById("eventFullscreenImg");
+
+  viewerImg.src = img.src;
+  viewer.style.display = "flex";
+  viewer.setAttribute("aria-hidden", "false");
+}
+
+function closeEventFullscreen() {
+  const viewer = document.getElementById("eventFullscreen");
+  viewer.style.display = "none";
+  viewer.setAttribute("aria-hidden", "true");
+}
+
+/* ESC key support */
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeEventFullscreen();
+});
+
+/* Click outside image to close */
+document.getElementById("eventFullscreen")?.addEventListener("click", function (e) {
+  if (e.target === this) closeEventFullscreen();
+});
+</script>
+
 </body>
 </html>
+
 
 
 
