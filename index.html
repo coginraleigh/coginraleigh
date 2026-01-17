@@ -30,6 +30,17 @@
 
 		color:#fff;
 	}
+/* === Mobile Navigation Toggle === */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+}
+
+.mobile-nav.show {
+  display: flex;
+}
+
 </style>	
 
 	<!-- ✅ Add this line for Font Awesome icons -->
@@ -948,12 +959,17 @@ footer {
 <!-- ===== FLOATING CONTACT BUTTONS END ===== -->
 
 
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("mobileNav");
+  nav.classList.toggle("show");
+}
+</script>
 
- 
 
-	
 </body>
 </html>
+
 
 
 
