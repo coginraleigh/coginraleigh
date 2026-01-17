@@ -632,27 +632,6 @@ document.addEventListener("click", function (e) {
 
 
 
-	
-<style>
-/* ================= GALLERY FIX ================= */
-.card {
-  width: 260px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 14px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  cursor: pointer;
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-</style>
-
  <section class="slanted-section3" id="gal">
   <div class="gallery-title">
     <h2>GALLERY</h2>
@@ -660,89 +639,18 @@ document.addEventListener("click", function (e) {
   </div>
 
   <div class="gallery-slider">
-
-  <div class="gallery-track">
-    <div class="gallery-slide">
-      <img src="image/Meeting Time.jpg" alt="Gallery Image 1">
+    <div class="gallery-track">
+      <div class="gallery-slide"><img src="image/Meeting Time.jpg"></div>
+      <div class="gallery-slide"><img src="image/Gallery-02.jpg"></div>
+      <div class="gallery-slide"><img src="image/Sunday School.jpg"></div>
+      <div class="gallery-slide"><img src="image/Bible Study.jpg"></div>
     </div>
-    <div class="gallery-slide">
-      <img src="image/Gallery-02.jpg" alt="Gallery Image 2">
-    </div>
-    <div class="gallery-slide">
-      <img src="image/Sunday School.jpg" alt="Gallery Image 3">
-    </div>
-    <div class="gallery-slide">
-      <img src="image/Bible Study.jpg.jpg" alt="Gallery Image 4">
-    </div>
+    <div class="gallery-dots"></div>
   </div>
-
-  <div class="gallery-dots"></div>
-
-</div>
-
 </section>
 
-	
-	<!-- Full-Screen Image Viewer -->
-	
-<div id="fullscreenViewer" class="fullscreen" aria-hidden="true">
-  <span class="close-btn" onclick="closeFullscreen()" aria-label="Close">&times;</span>
-  <img id="fullscreenImg" src="" alt="Fullscreen Image">
-  <button class="prev-btn" onclick="changeImage(-1)" aria-label="Previous Image">&#10094;</button>
-  <button class="next-btn" onclick="changeImage(1)" aria-label="Next Image">&#10095;</button>
-</div>
 
-<script>
-const images = [
-  "image/Meeting Time.jpg",
-  "image/Gallery-02.jpg",
-  "image/Sunday School.jpg",
-  "image/Bible Study.jpg"
-];
-
-let currentIndex = 0;
-const fullscreenViewer = document.getElementById("fullscreenViewer");
-const fullscreenImg = document.getElementById("fullscreenImg");
-
-function openFullscreen(index) {
-  currentIndex = index;
-  fullscreenImg.src = images[currentIndex];
-  fullscreenViewer.style.display = "flex";
-  fullscreenViewer.setAttribute("aria-hidden", "false");
-}
-
-function closeFullscreen() {
-  fullscreenViewer.style.display = "none";
-  fullscreenViewer.setAttribute("aria-hidden", "true");
-}
-
-function changeImage(direction) {
-  currentIndex = (currentIndex + direction + images.length) % images.length;
-  fullscreenImg.src = images[currentIndex];
-}
-
-// ✅ Mobile swipe support
-let startX = 0;
-fullscreenViewer.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-}, {passive: true});
-
-fullscreenViewer.addEventListener("touchend", e => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) { // minimum swipe distance
-    if (diff > 0) {
-      changeImage(1); // swipe left -> next
-    } else {
-      changeImage(-1); // swipe right -> previous
-    }
-  }
-});
-</script>
-
-
-	
+		
 	
 	<!--Meet Pastor & His Team-->
 <section class="team" id="team">
@@ -1625,122 +1533,42 @@ updateCountdown();
 	
 </style>
 
-<style>
-/* ================= AUTO CIRCULAR GALLERY ================= */
 
-.gallery-slider {
-  max-width: 900px;
-  margin: 40px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-.gallery-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
+  const track = document.querySelector(".gallery-track");
+  const slides = document.querySelectorAll(".gallery-slide");
+  const dotsBox = document.querySelector(".gallery-dots");
 
-.gallery-slide {
-  min-width: 100%;
-  height: 420px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  let index = 0;
+  let autoSlide;
 
-.gallery-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => moveTo(i);
+    dotsBox.appendChild(dot);
+  });
 
-/* Navigation dots */
-.gallery-dots {
-  text-align: center;
-  margin-top: 14px;
-}
+  const dots = dotsBox.querySelectorAll("span");
 
-.gallery-dots span {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background: #bbb;
-  border-radius: 50%;
-  margin: 0 6px;
-  cursor: pointer;
-}
-
-.gallery-dots span.active {
-  background: #AD2A0C;
-}
-
-/* 📱 Mobile */
-@media (max-width: 768px) {
-  .gallery-slide {
-    height: 260px;
+  function moveTo(i) {
+    index = i;
+    track.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach(d => d.classList.remove("active"));
+    dots[i].classList.add("active");
   }
-}
-</style>
 
-	  <script>
-const track = document.querySelector(".gallery-track");
-const slides = document.querySelectorAll(".gallery-slide");
-const dotsBox = document.querySelector(".gallery-dots");
+  function startAuto() {
+    autoSlide = setInterval(() => {
+      moveTo((index + 1) % slides.length);
+    }, 4000);
+  }
 
-let index = 0;
-let autoSlide;
-
-/* Create dots */
-slides.forEach((_, i) => {
-  const dot = document.createElement("span");
-  if (i === 0) dot.classList.add("active");
-  dot.onclick = () => moveTo(i);
-  dotsBox.appendChild(dot);
-});
-
-const dots = dotsBox.querySelectorAll("span");
-
-function moveTo(i) {
-  index = i;
-  track.style.transform = `translateX(-${i * 100}%)`;
-  dots.forEach(d => d.classList.remove("active"));
-  dots[i].classList.add("active");
-  resetAuto();
-}
-
-/* Auto circular */
-function startAuto() {
-  autoSlide = setInterval(() => {
-    index = (index + 1) % slides.length;
-    moveTo(index);
-  }, 4000);
-}
-
-function resetAuto() {
-  clearInterval(autoSlide);
   startAuto();
-}
-
-/* Swipe (mobile) */
-let startX = 0;
-track.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-}, { passive: true });
-
-track.addEventListener("touchend", e => {
-  const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) moveTo((index + 1) % slides.length);
-  if (endX - startX > 50) moveTo((index - 1 + slides.length) % slides.length);
 });
-
-/* Init */
-startAuto();
 </script>
-
-<!-- ================== END STEP 4 ================== -->
-
 	  
 
 <!-- ================= EVENT IMAGE FULLSCREEN ================= -->
@@ -1856,6 +1684,7 @@ function closeVerseModal() {
 
 </body>
 </html>
+
 
 
 
