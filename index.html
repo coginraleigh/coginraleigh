@@ -30,17 +30,6 @@
 
 		color:#fff;
 	}
-/* === Mobile Navigation Toggle === */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: #111;
-}
-
-.mobile-nav.show {
-  display: flex;
-}
-
 </style>	
 
 	<!-- ✅ Add this line for Font Awesome icons -->
@@ -66,8 +55,7 @@
         <a href="#gal">Gallery</a>
        		</nav>
 		
- <div class="menu-icon" id="menuIcon" onclick="toggleMenu()">☰</div>
-
+ <div class="menu-icon" id="menuIcon" onclick="toggleMenu()"></div>
     </header>
     <div class="mobile-nav" id="mobileNav">
         <a href="#">Home</a>
@@ -960,19 +948,12 @@ footer {
 <!-- ===== FLOATING CONTACT BUTTONS END ===== -->
 
 
-<script>
-function toggleMenu() {
-  const nav = document.getElementById("mobileNav");
-  nav.classList.toggle("show");
-}
-</script>
 
+ 
 
+	
 </body>
 </html>
-
-
-
 
 
 
