@@ -1224,6 +1224,13 @@ footer {
 </script>
 <!-- ===== FLOATING CONTACT BUTTONS END ===== -->
 
+	  <!-- ===== DAILY VERSE FLOATING BUTTON ===== -->
+<button class="daily-verse-btn" onclick="openVerseModal()">
+  📖 Daily Verse
+</button>
+<!-- ===== END DAILY VERSE FLOATING BUTTON ===== -->
+
+
 
 
 <script>
@@ -1470,6 +1477,108 @@ updateCountdown();
   box-shadow: 0 0 22px rgba(0,255,0,0.9) !important;
 }
 
+	/* ================= DAILY VERSE MODAL ================= */
+
+.verse-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.verse-modal-content {
+  background: #fff;
+  width: 92%;
+  max-width: 430px;
+  border-radius: 16px;
+  padding: 14px;
+  position: relative;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+.verse-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.verse-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.verse-header img {
+  width: 42px;
+}
+
+.verse-header h3 {
+  margin: 0;
+  color: #AD2A0C;
+  font-size: 18px;
+}
+
+.verse-header small {
+  color: #666;
+}
+
+/* Language buttons */
+.verse-lang {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.lang-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #AD2A0C;
+  background: #fff;
+  color: #AD2A0C;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: #AD2A0C;
+  color: #fff;
+}
+
+/* iframe */
+.verse-modal iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  border-radius: 12px;
+}
+
+@media (max-width: 480px) {
+  .verse-modal iframe {
+    height: 360px;
+  }
+}
+
+	.daily-verse-btn {
+  position: fixed;
+  bottom: 160px;   /* sits ABOVE WhatsApp button */
+  right: 20px;
+  background: linear-gradient(135deg, #AD2A0C, #ff5a36);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2000;
+}
+
 </style>
 
 
@@ -1511,8 +1620,96 @@ document.getElementById("eventFullscreen")?.addEventListener("click", function (
 });
 </script>
 
+	  <!-- ================= DAILY VERSE MODAL ================= -->
+<div id="dailyVerseModal" class="verse-modal" aria-hidden="true">
+  <div class="verse-modal-content">
+
+    <!-- Close -->
+    <span class="verse-close" onclick="closeVerseModal()">&times;</span>
+
+    <!-- Church Branding -->
+    <div class="verse-header">
+      <img src="image/Logo png 2.png" alt="Church Logo">
+      <div>
+        <h3>Verse of the Day</h3>
+        <small>Church of God – Raleigh</small>
+      </div>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="verse-lang">
+      <button id="langEn" class="lang-btn active" onclick="setVerseLang('en')">English</button>
+      <button id="langMl" class="lang-btn" onclick="setVerseLang('ml')">Malayalam</button>
+    </div>
+
+    <!-- SAFE OFFICIAL EMBED -->
+    <iframe
+      id="verseIframe"
+      src="https://www.bible.com/verse-of-the-day"
+      title="YouVersion Verse of the Day"
+      loading="lazy"
+      sandbox="allow-same-origin allow-scripts allow-popups">
+    </iframe>
+
+  </div>
+</div>
+<!-- ================= END DAILY VERSE MODAL ================= -->
+
+	  <script>
+const verseModal = document.getElementById("dailyVerseModal");
+const verseIframe = document.getElementById("verseIframe");
+
+function openVerseModal() {
+  verseModal.style.display = "flex";
+  verseModal.setAttribute("aria-hidden", "false");
+
+  const today = new Date().toDateString();
+  localStorage.setItem("verseShownDate", today);
+}
+
+function closeVerseModal() {
+  verseModal.style.display = "none";
+  verseModal.setAttribute("aria-hidden", "true");
+}
+
+/* Click outside to close */
+verseModal.addEventListener("click", e => {
+  if (e.target === verseModal) closeVerseModal();
+});
+
+/* ESC key */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeVerseModal();
+});
+
+/* Language switch */
+function setVerseLang(lang) {
+  document.getElementById("langEn").classList.remove("active");
+  document.getElementById("langMl").classList.remove("active");
+
+  if (lang === "ml") {
+    verseIframe.src = "https://www.bible.com/verse-of-the-day?language=mal";
+    document.getElementById("langMl").classList.add("active");
+  } else {
+    verseIframe.src = "https://www.bible.com/verse-of-the-day";
+    document.getElementById("langEn").classList.add("active");
+  }
+}
+
+/* Auto-show once per day */
+(function () {
+  const today = new Date().toDateString();
+  const shown = localStorage.getItem("verseShownDate");
+
+  if (shown !== today) {
+    setTimeout(openVerseModal, 1500);
+  }
+})();
+</script>
+
 </body>
 </html>
+
 
 
 
