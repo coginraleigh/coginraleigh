@@ -369,6 +369,30 @@ table tr:hover {
   background: #AD2A0C;
   color: #fff;
 }
+/* Show ET / IST on hover */
+.time-cell {
+  position: relative;
+  cursor: help;
+}
+
+.hover-time {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-top: 4px;
+  z-index: 100;
+}
+
+.time-cell:hover .hover-time {
+  display: block;
+}
 
 /* === Meeting Schedule Styles END === */
 </style>
@@ -377,6 +401,14 @@ table tr:hover {
 <!-- ✅ JavaScript -->
 <script>
 /* === Meeting Schedule Script START === */
+const tableBody = document.getElementById("tableBody");
+const todayStatus = document.getElementById("todayStatus");
+
+const weeklyOrder = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const today = new Date();
+const dayName = today.toLocaleString("en-US", { weekday: "long" });
+
 const timings = [
   {
     name: "Sunday School",
@@ -442,8 +474,18 @@ function renderTable() {
 
       dayEvents.forEach(event => {
         const row = document.createElement("tr");
-        const timeText = currentTZ === "et" ? event.et : event.ist;
-        row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${timeText}</td>`;
+        const primaryTime = currentTZ === "et" ? event.et : event.ist;
+        const secondaryTime = currentTZ === "et" ? event.ist : event.et;
+
+    row.innerHTML = `
+  <td>${event.day}</td>
+  <td>${event.name}</td>
+  <td class="time-cell">
+    ${primaryTime}
+    <span class="hover-time">${secondaryTime}</span>
+  </td>
+`;
+
 
         if (event.day === dayName) {
           row.classList.add("today-highlight");
@@ -1063,6 +1105,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
