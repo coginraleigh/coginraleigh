@@ -245,6 +245,11 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <h2><b>MEETING SCHEDULE</b></h2>
     <hr class="underline2"><br>
   </center>
+<!-- Timezone Toggle -->
+<div class="timezone-toggle">
+  <button id="toggleET" class="tz-btn active">US ET</button>
+  <button id="toggleIST" class="tz-btn">IST</button>
+</div>
 
   <div class="row">
     <div class="col">
@@ -340,6 +345,31 @@ table tr:hover {
   font-weight: bold;
   color: #AD2A0C;
 }
+
+	/* Timezone Toggle */
+.timezone-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tz-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #AD2A0C;
+  background: #fff;
+  color: #AD2A0C;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tz-btn.active {
+  background: #AD2A0C;
+  color: #fff;
+}
+
 /* === Meeting Schedule Styles END === */
 </style>
 <!-- END CSS MEETING SCHEDULE -->
@@ -348,64 +378,104 @@ table tr:hover {
 <script>
 /* === Meeting Schedule Script START === */
 const timings = [
-  { name: "Sunday School", day: "Sunday", time: "9:45 AM TO 10:30 AM" },
-  { name: "Sunday Worship", day: "Sunday", time: "10:30 AM TO 12:30 PM" },
-  { name: "Youth Meeting", day: "Sunday", time: "12:00 PM TO 1:00 PM (2nd Sunday)" },
-  { name: "Ladies Meeting", day: "Thursday", time: "7:00 PM TO 8:00 PM" },
-  { name: "Intercessory Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM" },
-  { name: "Fasting Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM (1st Fri & Sat)" }
+  {
+    name: "Sunday School",
+    day: "Saturday",
+    et: "10:00 AM – 11:15 AM",
+    ist: "7:30 PM – 8:45 PM"
+  },
+  {
+    name: "Sunday School",
+    day: "Sunday",
+    et: "9:45 AM – 10:30 AM",
+    ist: "7:15 PM – 8:00 PM"
+  },
+  {
+    name: "Sunday Worship",
+    day: "Sunday",
+    et: "10:30 AM – 12:30 PM",
+    ist: "8:00 PM – 10:00 PM"
+  },
+  {
+    name: "Youth Meeting",
+    day: "Sunday",
+    et: "12:00 PM – 1:00 PM (2nd Sunday)",
+    ist: "9:30 PM – 10:30 PM (2nd Sunday)"
+  },
+  {
+    name: "Ladies Meeting",
+    day: "Thursday",
+    et: "7:00 PM – 8:00 PM",
+    ist: "4:30 AM – 5:30 AM"
+  },
+  {
+    name: "Intercessory Prayer",
+    day: "Friday",
+    et: "7:00 PM – 8:00 PM",
+    ist: "4:30 AM – 5:30 AM"
+  },
+  {
+    name: "Fasting Prayer",
+    day: "Friday",
+    et: "7:00 PM – 8:00 PM (1st Fri & Sat)",
+    ist: "4:30 AM – 5:30 AM (1st Fri & Sat)"
+  }
 ];
 
-// Group events by day
-const grouped = {};
-timings.forEach(event => {
-  if (!grouped[event.day]) grouped[event.day] = [];
-  grouped[event.day].push(event);
-});
 
-// Weekly order
-const weeklyOrder = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let currentTZ = localStorage.getItem("tz") || "et";
 
-const tableBody = document.getElementById("tableBody");
-const todayStatus = document.getElementById("todayStatus");
+const toggleET = document.getElementById("toggleET");
+const toggleIST = document.getElementById("toggleIST");
 
-// Current day
-const today = new Date();
-const dayName = today.toLocaleString("en-US", { weekday: "long" });
+function renderTable() {
+  tableBody.innerHTML = "";
+  let hasMeetingToday = false;
 
-let hasMeetingToday = false;
+  weeklyOrder.forEach(day => {
+    const dayEvents = timings.filter(e => e.day === day);
+    if (dayEvents.length) {
+      const dayRow = document.createElement("tr");
+      dayRow.classList.add("day-header");
+      dayRow.innerHTML = `<td colspan="3">${day}</td>`;
+      tableBody.appendChild(dayRow);
 
-// Insert rows by weekly order
-weeklyOrder.forEach(day => {
-  if (grouped[day]) {
-    // Day header row
-    const dayRow = document.createElement("tr");
-    dayRow.classList.add("day-header");
-    dayRow.innerHTML = `<td colspan="3">${day}</td>`;
-    tableBody.appendChild(dayRow);
+      dayEvents.forEach(event => {
+        const row = document.createElement("tr");
+        const timeText = currentTZ === "et" ? event.et : event.ist;
+        row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${timeText}</td>`;
 
-    // Events under this day
-    grouped[day].forEach(event => {
-      const row = document.createElement("tr");
-      row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${event.time}</td>`;
+        if (event.day === dayName) {
+          row.classList.add("today-highlight");
+          hasMeetingToday = true;
+        }
 
-      // Highlight today
-      if (event.day === dayName) {
-        row.classList.add("today-highlight");
-        hasMeetingToday = true;
-      }
-      tableBody.appendChild(row);
-    });
-  }
-});
+        tableBody.appendChild(row);
+      });
+    }
+  });
 
-// Show status message
-todayStatus.textContent = hasMeetingToday
-  ? `✅ Yes, we have service(s) today (${dayName}).`
-  : `❌ No meetings scheduled today (${dayName}).`;
+  todayStatus.textContent = hasMeetingToday
+    ? `✅ Yes, we have service(s) today (${dayName}).`
+    : `❌ No meetings scheduled today (${dayName}).`;
+}
+
+function setTZ(tz) {
+  currentTZ = tz;
+  localStorage.setItem("tz", tz);
+  toggleET.classList.toggle("active", tz === "et");
+  toggleIST.classList.toggle("active", tz === "ist");
+  renderTable();
+}
+
+toggleET.onclick = () => setTZ("et");
+toggleIST.onclick = () => setTZ("ist");
+
+// Initial render
+setTZ(currentTZ);
 /* === Meeting Schedule Script END === */
 </script>
-<!-- END JS MEETING SCHEDULE -->
+
 
 
 
@@ -993,6 +1063,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
