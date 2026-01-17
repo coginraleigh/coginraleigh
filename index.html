@@ -632,25 +632,91 @@ document.addEventListener("click", function (e) {
 
 
 
+	
+		
  <section class="slanted-section3" id="gal">
   <div class="gallery-title">
     <h2>GALLERY</h2>
     <hr class="underline2">
   </div>
 
-  <div class="gallery-slider">
-    <div class="gallery-track">
-      <div class="gallery-slide"><img src="image/Meeting Time.jpg"></div>
-      <div class="gallery-slide"><img src="image/Gallery-02.jpg"></div>
-      <div class="gallery-slide"><img src="image/Sunday School.jpg"></div>
-      <div class="gallery-slide"><img src="image/Bible Study.jpg"></div>
+  <div class="card-container">
+    <div class="card" onclick="openFullscreen(0)">
+      <img src="image/Gallery-01.jpg" alt="Image 1">
     </div>
-    <div class="gallery-dots"></div>
+    <div class="card" onclick="openFullscreen(1)">
+      <img src="image/Gallery-02.jpg" alt="Image 2">
+    </div>
+    <div class="card" onclick="openFullscreen(2)">
+      <img src="image/Gallery-03.jpg" alt="Image 3">
+    </div>
+    <div class="card" onclick="openFullscreen(3)">
+      <img src="image/Gallery-04.jpg" alt="Image 4">
+    </div>
   </div>
 </section>
 
+	
+	<!-- Full-Screen Image Viewer -->
+	
+<div id="fullscreenViewer" class="fullscreen" aria-hidden="true">
+  <span class="close-btn" onclick="closeFullscreen()" aria-label="Close">&times;</span>
+  <img id="fullscreenImg" src="" alt="Fullscreen Image">
+  <button class="prev-btn" onclick="changeImage(-1)" aria-label="Previous Image">&#10094;</button>
+  <button class="next-btn" onclick="changeImage(1)" aria-label="Next Image">&#10095;</button>
+</div>
 
-		
+<script>
+const images = [
+  "image/Gallery-01.jpg",
+  "image/Gallery-02.jpg",
+  "image/Gallery-03.jpg",
+  "image/Gallery-04.jpg"
+];
+
+let currentIndex = 0;
+const fullscreenViewer = document.getElementById("fullscreenViewer");
+const fullscreenImg = document.getElementById("fullscreenImg");
+
+function openFullscreen(index) {
+  currentIndex = index;
+  fullscreenImg.src = images[currentIndex];
+  fullscreenViewer.style.display = "flex";
+  fullscreenViewer.setAttribute("aria-hidden", "false");
+}
+
+function closeFullscreen() {
+  fullscreenViewer.style.display = "none";
+  fullscreenViewer.setAttribute("aria-hidden", "true");
+}
+
+function changeImage(direction) {
+  currentIndex = (currentIndex + direction + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex];
+}
+
+// ✅ Mobile swipe support
+let startX = 0;
+fullscreenViewer.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+}, {passive: true});
+
+fullscreenViewer.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > 50) { // minimum swipe distance
+    if (diff > 0) {
+      changeImage(1); // swipe left -> next
+    } else {
+      changeImage(-1); // swipe right -> previous
+    }
+  }
+});
+</script>
+
+
+	
 	
 	<!--Meet Pastor & His Team-->
 <section class="team" id="team">
@@ -1218,22 +1284,6 @@ updateCountdown();
 
 <style>
 /* ================= EVENT CARD (FINAL) ================= */
-/* ================= DAILY VERSE IMAGE ================= */
-
-.verse-img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #f5f5f5;
-}
-
-/* Mobile adjustment */
-@media (max-width: 480px) {
-  .verse-img {
-    max-height: 360px;
-  }
-}
 
 .special-event-card {
   max-width: 900px;
@@ -1317,7 +1367,6 @@ updateCountdown();
   background: #1c6fe3;
 }
 
-	
 	/* ============ EVENT FULLSCREEN VIEW ============ */
 
 .event-fullscreen {
@@ -1530,45 +1579,11 @@ updateCountdown();
   z-index: 2000;
 }
 
-	
 </style>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- ================== END STEP 4 ================== -->
 
-  const track = document.querySelector(".gallery-track");
-  const slides = document.querySelectorAll(".gallery-slide");
-  const dotsBox = document.querySelector(".gallery-dots");
-
-  let index = 0;
-  let autoSlide;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement("span");
-    if (i === 0) dot.classList.add("active");
-    dot.onclick = () => moveTo(i);
-    dotsBox.appendChild(dot);
-  });
-
-  const dots = dotsBox.querySelectorAll("span");
-
-  function moveTo(i) {
-    index = i;
-    track.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(d => d.classList.remove("active"));
-    dots[i].classList.add("active");
-  }
-
-  function startAuto() {
-    autoSlide = setInterval(() => {
-      moveTo((index + 1) % slides.length);
-    }, 4000);
-  }
-
-  startAuto();
-});
-</script>
 	  
 
 <!-- ================= EVENT IMAGE FULLSCREEN ================= -->
@@ -1627,69 +1642,73 @@ document.getElementById("eventFullscreen")?.addEventListener("click", function (
       <button id="langMl" class="lang-btn" onclick="setVerseLang('ml')">Malayalam</button>
     </div>
 
-    
-    <!-- DAILY VERSE IMAGE ONLY -->
-<img
-  id="verseImage"
-  src=""
-  alt="Daily Bible Verse"
-  class="verse-img">
-
+    <!-- SAFE OFFICIAL EMBED -->
+    <iframe
+      id="verseIframe"
+      src="https://www.bible.com/verse-of-the-day"
+      title="YouVersion Verse of the Day"
+      loading="lazy"
+      sandbox="allow-same-origin allow-scripts allow-popups">
+    </iframe>
 
   </div>
 </div>
 <!-- ================= END DAILY VERSE MODAL ================= -->
 
-	  
-</script>
-	  
-<script>
-/* 🔁 UPDATE THESE DAILY */
-const verseImages = {
-  en: "PASTE_ENGLISH_VERSE_IMAGE_URL",
-  ml: "PASTE_MALAYALAM_VERSE_IMAGE_URL",
-  hi: "PASTE_HINDI_VERSE_IMAGE_URL"
-};
-
-const verseImg = document.getElementById("verseImage");
-
-function setVerseLang(lang) {
-  document.getElementById("langEn").classList.remove("active");
-  document.getElementById("langMl").classList.remove("active");
-  if (document.getElementById("langHi")) {
-    document.getElementById("langHi").classList.remove("active");
-  }
-
-  verseImg.src = verseImages[lang];
-
-  if (lang === "ml") document.getElementById("langMl").classList.add("active");
-  else if (lang === "hi" && document.getElementById("langHi")) document.getElementById("langHi").classList.add("active");
-  else document.getElementById("langEn").classList.add("active");
-}
+	  <script>
+const verseModal = document.getElementById("dailyVerseModal");
+const verseIframe = document.getElementById("verseIframe");
 
 function openVerseModal() {
-  document.getElementById("dailyVerseModal").style.display = "flex";
-  document.getElementById("dailyVerseModal").setAttribute("aria-hidden", "false");
-  setVerseLang("en");
+  verseModal.style.display = "flex";
+  verseModal.setAttribute("aria-hidden", "false");
 
   const today = new Date().toDateString();
   localStorage.setItem("verseShownDate", today);
 }
 
 function closeVerseModal() {
-  document.getElementById("dailyVerseModal").style.display = "none";
-  document.getElementById("dailyVerseModal").setAttribute("aria-hidden", "true");
+  verseModal.style.display = "none";
+  verseModal.setAttribute("aria-hidden", "true");
 }
+
+/* Click outside to close */
+verseModal.addEventListener("click", e => {
+  if (e.target === verseModal) closeVerseModal();
+});
+
+/* ESC key */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeVerseModal();
+});
+
+/* Language switch */
+function setVerseLang(lang) {
+  document.getElementById("langEn").classList.remove("active");
+  document.getElementById("langMl").classList.remove("active");
+
+  if (lang === "ml") {
+    verseIframe.src = "https://www.bible.com/verse-of-the-day?language=mal";
+    document.getElementById("langMl").classList.add("active");
+  } else {
+    verseIframe.src = "https://www.bible.com/verse-of-the-day";
+    document.getElementById("langEn").classList.add("active");
+  }
+}
+
+/* Auto-show once per day */
+(function () {
+  const today = new Date().toDateString();
+  const shown = localStorage.getItem("verseShownDate");
+
+  if (shown !== today) {
+    setTimeout(openVerseModal, 1500);
+  }
+})();
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
 
 
 
