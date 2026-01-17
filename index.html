@@ -551,22 +551,28 @@ fullscreenViewer.addEventListener("touchend", e => {
     <hr class="underline2">
   </div>
 
-  <div class="team-container">
-    <!-- Headmaster -->
-    <div class="team-card headmaster">
-      <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
-      <h3>Br. Vinson Thomas</h3>
-      <p class="role">Sunday School Headmaster</p>
-    </div>	
+<!-- Sunday School Head -->
+<div class="team-card head">
+  <img src="image/Pastor Jacab Mathew.jpg" alt="Pastor Jacob Mathew" class="team-img">
+  <h3>Pr. Jacob Mathew</h3>
+  <p class="role">Sunday School Head</p>
+</div>
 
-    <!-- Teacher 1 -->
+<!-- Teacher 1-->
+<div class="team-card">
+  <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
+  <h3>Br. Vinson Thomas</h3>
+  <p class="role">Sunday School Teacher</p>
+</div>
+
+    <!-- Teacher 2 -->
     <div class="team-card">
       <img src="image/Justy.jpg" alt="Sis. Justy Koshy" class="team-img">
       <h3>Sis. Justy Koshy</h3>
       <p class="role">Sunday School Teacher</p>
 	    </div>	
 
-    <!-- Teacher 2 -->
+    <!-- Teacher 3 -->
     <div class="team-card"> 
       <img src="image/Rini.jpg" alt="Sis. Rini John" class="team-img">
       <h3>Sis. Rini John</h3>
@@ -622,12 +628,14 @@ fullscreenViewer.addEventListener("touchend", e => {
 }
 
 /* Special Highlight Styles */
-.headmaster {
+
+/* Sunday School Head Highlight */
+.head {
   border: 3px solid gold;
 }
 
-.headmaster::before {
-  content: "★ Headmaster";
+.head::before {
+  content: "★ Sunday School Head";
   position: absolute;
   top: -12px;
   left: 50%;
@@ -636,9 +644,9 @@ fullscreenViewer.addEventListener("touchend", e => {
   color: #000;
   font-size: 12px;
   font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 2px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
 /* Pastor Highlight */
@@ -954,6 +962,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
