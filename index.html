@@ -266,6 +266,10 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
             <tbody id="tableBody"></tbody>
           </table>
           <p id="todayStatus" class="today-status"></p>
+			<p style="font-size:12px;color:#666;margin-top:6px;">
+  Tap time to view other timezone
+</p>
+
         </div>
       </center>
     </div>
@@ -390,10 +394,22 @@ table tr:hover {
   z-index: 100;
 }
 
-.time-cell:hover .hover-time {
+.time-cell:hover .hover-time 
+	{
   display: block;
 }
+/* 📱 Mobile tap support */
+@media (hover: none) 
+{
+  .time-cell {
+    cursor: pointer;
+  }
 
+  .time-cell.active .hover-time {
+    display: block;
+  }
+}
+	
 /* === Meeting Schedule Styles END === */
 </style>
 <!-- END CSS MEETING SCHEDULE -->
@@ -510,6 +526,22 @@ toggleIST.onclick = () => setTZ("ist");
 
 // Initial render
 setTZ(currentTZ);
+	// 📱 Tap to show times on mobile
+document.addEventListener("click", function (e) {
+  const timeCell = e.target.closest(".time-cell");
+
+  // Close all open tooltips
+  document.querySelectorAll(".time-cell.active").forEach(cell => {
+    if (cell !== timeCell) cell.classList.remove("active");
+  });
+
+  // Toggle tapped cell
+  if (timeCell) {
+    timeCell.classList.toggle("active");
+    e.stopPropagation();
+  }
+});
+
 /* === Meeting Schedule Script END === */
 </script>
 
@@ -1100,6 +1132,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
