@@ -291,7 +291,7 @@ table {
   border-collapse: collapse;
   background: #fff;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
@@ -342,6 +342,10 @@ table tr:hover {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+.today-highlight .time-cell {
+  overflow: visible;     /* 🔑 allows tooltip to appear */
+}
+
 
 .today-status {
   margin-top: 12px;
@@ -382,8 +386,9 @@ table tr:hover {
 .hover-time {
   display: none;
   position: absolute;
-  left: 0;
-  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 110%;
   background: #333;
   color: #fff;
   padding: 6px 10px;
@@ -391,8 +396,11 @@ table tr:hover {
   font-size: 13px;
   white-space: nowrap;
   margin-top: 4px;
-  z-index: 100;
+  z-index: 9999;          /* 🔑 ensures above Today badge */
+  max-width: 90vw;        /* 🔑 prevents overflow */
+  text-align: center;
 }
+
 
 .time-cell:hover .hover-time 
 	{
@@ -409,6 +417,13 @@ table tr:hover {
     display: block;
   }
 }
+.time-cell::after 
+	{
+  content: " ⓘ";
+  font-size: 12px;
+  color: #888;
+}
+
 	
 /* === Meeting Schedule Styles END === */
 </style>
@@ -526,21 +541,21 @@ toggleIST.onclick = () => setTZ("ist");
 
 // Initial render
 setTZ(currentTZ);
-	// 📱 Tap to show times on mobile
+// 📱 Tap to show times on mobile (improved)
+	
 document.addEventListener("click", function (e) {
   const timeCell = e.target.closest(".time-cell");
 
-  // Close all open tooltips
   document.querySelectorAll(".time-cell.active").forEach(cell => {
     if (cell !== timeCell) cell.classList.remove("active");
   });
 
-  // Toggle tapped cell
   if (timeCell) {
     timeCell.classList.toggle("active");
     e.stopPropagation();
   }
 });
+
 
 /* === Meeting Schedule Script END === */
 </script>
@@ -1132,6 +1147,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
