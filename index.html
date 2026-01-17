@@ -556,7 +556,10 @@ fullscreenViewer.addEventListener("touchend", e => {
 
     <!-- Sunday School Head -->
     <div class="team-card head">
-      <img src="image/Pastor Jacab Mathew.jpg" alt="Pastor Jacob Mathew" class="team-img">
+	<div class="img-circle">
+  <img src="image/Pastor Jacab Mathew.jpg" alt="Pastor Jacob Mathew">
+</div>
+
       <h3>Pr. Jacob Mathew</h3>
       <p class="role">Sunday School Head</p>
     </div>
@@ -674,6 +677,24 @@ fullscreenViewer.addEventListener("touchend", e => {
 }
 
 /* Images */
+/* Perfect circular image crop */
+.img-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;        /* 🔑 KEY FIX */
+  margin: 0 auto 15px;
+  background: #f3f3f3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.img-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills circle */
+  object-position: center top; /* better for portraits */
+}
+
 .team-img {
   width: 180px;
   height: 180px;
@@ -968,6 +989,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
