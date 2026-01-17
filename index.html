@@ -556,7 +556,7 @@ fullscreenViewer.addEventListener("touchend", e => {
 
     <!-- Sunday School Head -->
     <div class="team-card head">
-      <img src="image/Pastor Jacob Mathew.jpg" alt="Pastor Jacob Mathew" class="team-img">
+      <img src="image/Pastor Jacab Mathew.jpg" alt="Pastor Jacob Mathew" class="team-img">
       <h3>Pr. Jacob Mathew</h3>
       <p class="role">Sunday School Head</p>
     </div>
@@ -677,10 +677,12 @@ fullscreenViewer.addEventListener("touchend", e => {
 .team-img {
   width: 180px;
   height: 180px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center top; /* ✅ better for portrait photos */
   margin-bottom: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background-color: #f5f5f5; /* fallback */
 }
 
 /* Text */
@@ -966,6 +968,7 @@ footer {
 	
 </body>
 </html>
+
 
 
 
