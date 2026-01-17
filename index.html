@@ -1,373 +1,982 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
-<title>Church of God Raleigh</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Church of God in Raleigh – Malayalam congregation worshipping God in spirit and truth. Join us for worship, prayer meetings, and fellowship.">
-<meta name="keywords" content="Church of God Raleigh, Malayalam Church NC, Pentecostal Church Raleigh">
-
+<title>Church of God NC</title>
 <link rel="icon" href="image/Logo png 2.png">
+<link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="icofont/icofont.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 
 <style>
+	
 
-/* ================= BASIC RESET ================= */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
+	
+ 
+    .contact {
+        text-align: center;
+		color:#fff;
+    }
+	
+	
+	    .divider {
+        width: 2px;
+        height: 30px; /* Adjust height as needed */
+        background-color: #fff;
+        margin: 0 15px;
+    }
+	
+	.contact a{
 
-/* ================= HEADER ================= */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 25px;
-  background: #111;
-}
+		color:#fff;
+	}
+</style>	
 
-.logo {
-  height: 60px;
-}
+	<!-- ✅ Add this line for Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-nav a {
-  color: #fff;
-  margin: 0 12px;
-  text-decoration: none;
-  font-weight: 500;
-}
+  <style>
+    /* your CSS goes here */
+  </style>
 
-.menu-icon {
-  display: none;
-  font-size: 26px;
-  color: #fff;
-  cursor: pointer;
-}
+</head>
 
-/* ================= MOBILE NAV ================= */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: #111;
-}
+<body>
+	
 
-.mobile-nav a {
-  color: #fff;
-  padding: 15px;
-  text-decoration: none;
-  border-top: 1px solid #333;
-}
+	
+	
+	<header>
+	<a href="#"><img class="logo" src="image/Logo png 2.png" alt=""></a>
+        <nav>
+		<a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#meeting">Meetings</a>
+        <a href="#gal">Gallery</a>
+       		</nav>
+		
+ <div class="menu-icon" id="menuIcon" onclick="toggleMenu()"></div>
+    </header>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#meeting">Meetings</a>
+        <a href="#gal">Gallery</a>
+      </div>
+		
+		
+	  <div class="marquee-container">
+        <div class="marquee-text">Praise the Lord! NORTH CAROLINA ലെ  RALEIGH പട്ടണത്തിൽ ദൈവത്തെ സത്യത്തിലും ആത്മാവിലും ആരാധിപ്പാൻ ഒരു കൂട്ടായ്മ.</div>
+    </div>	
+		
 
-.mobile-nav.show {
-  display: flex;
-}
+	
+ <section class="slanted-section">
+     <img class="simg1" src="image/Title  3.svg" alt="">
+    </section>
 
-/* ================= MARQUEE ================= */
-.marquee-container {
-  background: #AD2A0C;
-  color: #fff;
-  padding: 10px;
-  overflow: hidden;
-}
+	
+	<section class="content" id="about">
+	
+        <div class="row">
 
-.marquee-text {
-  white-space: nowrap;
-  animation: scroll 18s linear infinite;
-}
+        <div class="col">
+		<h2><b>ABOUT US</b></h2>
+		<hr class="underline"><br>
+        <h3><b>Welcome to Church of God in Raleigh</b></h3><br>
+<p>At <b>Church of God in Raleigh </b>, we are a welcoming community dedicated to spiritual growth, fellowship, and service. Our ministries cater to individuals and families of all ages, offering opportunities to deepen your faith and connect with others.
+We provide <b>Sunday School classes</b>,  led by passionate teachers who share the Word of God, along with dedicated ministries such as <b>Women’s Ministry, and Youth Ministry</b>, to support and encourage every member of our congregation. You are not just a visitor here, you are a family! As you explore our website, we pray that the Holy Spirit uplifts you and fills your heart with peace and blessings. We invite you to join us in worship, share your prayer requests, and experience the love and grace of God. We look forward to connecting with you soon! 
 
-@keyframes scroll {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
+</p>
+<br> <br>
+<a href="mailto:prayers@cograleigh.com " class="btn1">Send Prayer Request</a>
+			
+</div>
+			
+<div class="col"><img class="raleigh" src="image/ab-03.png" alt=""></div>			
+			
+</div>
+</section>	
+	
+<!-- 🌟 EVENTS SECTION -->
+<section class="content" id="events">
+  <div class="text-center">
+    <h2><b>UPCOMING EVENTS</b></h2>
+    <hr class="underline2"><br>
+    <p style="font-size: 1.2rem; color: #666;">Stay tuned! More events coming soon.</p>
+  </div>
 
-/* ================= CONTENT ================= */
-.content {
-  padding: 60px 20px;
-  background: #fff;
-}
+  <!-- 🔽 PAST EVENTS SECTION -->
+  <div class="text-center" style="margin-top: 40px;">
+    <h2><b>PAST EVENTS</b></h2>
+    <hr class="underline2"><br>
+  </div>
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-}
+  <!-- 🔽 PAST EVENTS DROPDOWN (Compact Toggle) -->
+  <div class="event-dropdown">
+    <!-- Toggle Button for May 2025 -->
+    <button class="dropdown-btn" onclick="toggleDropdown('may2025')">May 2025</button>
+    <div class="dropdown-content" id="may2025">
+      <!-- Event Details for Past Event -->
+      <div class="event-details">
+        <p><b>May 02-03, 2025 - Month Fasting Prayer</b></p>
+        <p><b>Date:</b> May 02–03, 2025</p>
+        <p><b>Time:</b> 7:30 PM – 8:45 PM US ET / 5:00 AM – 6:15 AM IST</p>
+        <p><b>Event Summary:</b> Join us for a spirit-filled fasting prayer with Pastor Baiju Malakkara. Experience divine worship and powerful prayer times together.</p>
+      </div>
+      <!-- Add more past event details as needed -->
+    </div>
+  </div>
+</section>
 
-.col {
-  flex: 1;
-  min-width: 280px;
-}
+<!-- ✅ CSS STYLES MOVED HERE -->
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
 
-.raleigh {
-  max-width: 100%;
-  border-radius: 12px;
-}
+  #events {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
 
-/* ================= BUTTON ================= */
-.btn1 {
-  background: #AD2A0C;
-  color: #fff;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 6px;
-  display: inline-block;
-}
+  .text-center {
+    margin-bottom: 30px;
+  }
 
-/* ================= EVENTS ================= */
-#events {
-  padding: 60px 20px;
-  background: #f4f4f4;
-  text-align: center;
-}
+  .underline2 {
+    width: 60px;
+    height: 3px;
+    background-color: #AD2A0C;
+    margin: 0 auto 20px;
+  }
 
-.underline2 {
-  width: 60px;
-  height: 3px;
-  background: #AD2A0C;
-  margin: 10px auto 25px;
-}
+  /* Compact Style for the dropdown button */
+  .dropdown-btn {
+    background-color: #AD2A0C;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+  }
 
-.dropdown-btn {
-  background: #AD2A0C;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-}
+  .dropdown-btn:hover {
+    background-color: #C25B4B;
+  }
 
-.dropdown-content {
-  display: none;
-  background: #fff;
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-align: left;
-}
+  /* The dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
 
-/* ================= MEETING TABLE ================= */
+  /* Event Details Styles */
+  .event-details {
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .event-details b {
+    color: #AD2A0C;
+  }
+
+  /* Fade-In Animation for Dropdown */
+  .fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .dropdown-btn {
+      width: 80%;
+      font-size: 1rem;
+    }
+
+    .event-details {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<!-- ✅ JavaScript to Toggle Dropdown for Past Event -->
+<script>
+  // Function to toggle the visibility of the event details (dropdown)
+  function toggleDropdown(eventId) {
+    const dropdownContent = document.getElementById(eventId);
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+      dropdownContent.classList.add('fadeIn'); // Add fadeIn animation when expanding
+    }
+  }
+</script>
+
+
+
+
+	
+<!-- 🌟 MEETING SCHEDULE -->
+<section class="slanted-section2" id="meeting">
+  <center>
+    <h2><b>MEETING SCHEDULE</b></h2>
+    <hr class="underline2"><br>
+  </center>
+
+  <div class="row">
+    <div class="col">
+      <center>
+        <div class="table-container">
+          <table id="meetingTable">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Event</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <p id="todayStatus" class="today-status"></p>
+        </div>
+      </center>
+    </div>
+  </div>
+</section>
+<!-- END MEETING SCHEDULE -->
+
+<!-- ✅ Stylish CSS -->
+<style>
+/* === Meeting Schedule Styles START === */
 .table-container {
+  margin-top: 20px;
+  width: 95%;
   max-width: 800px;
-  margin: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 14px;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background: #AD2A0C;
-  color: #fff;
-}
-
-.today-highlight {
-  background: #fff3cd;
-  font-weight: bold;
-}
-
-/* ================= GALLERY ================= */
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card img {
-  width: 260px;
   border-radius: 12px;
-  cursor: pointer;
-}
-
-/* ================= FULLSCREEN VIEWER ================= */
-.fullscreen {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  align-items: center;
-  justify-content: center;
-  z-index: 3000;
-}
-
-.fullscreen img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-/* ================= TEAM ================= */
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-.team-card {
-  background: #fff;
-  padding: 20px;
-  width: 220px;
-  border-radius: 15px;
-  text-align: center;
+  overflow: hidden;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.team-img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
+table th, table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
 }
 
-/* ================= FOOTER ================= */
+table th {
+  background: #AD2A0C;
+  color: white;
+  font-size: 16px;
+}
+
+table tr:hover {
+  background-color: #f7f7f7;
+  transition: background 0.3s;
+}
+
+/* Group header row */
+.day-header {
+  background: #f1f1f1;
+  font-weight: bold;
+  font-size: 15px;
+  color: #AD2A0C;
+  text-transform: uppercase;
+}
+
+.today-highlight {
+  background: #fff3cd !important;
+  border-left: 5px solid #ff9800;
+  font-weight: bold;
+  position: relative;
+}
+
+.today-highlight::after {
+  content: "Today";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.today-status {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #AD2A0C;
+}
+/* === Meeting Schedule Styles END === */
+</style>
+<!-- END CSS MEETING SCHEDULE -->
+
+<!-- ✅ JavaScript -->
+<script>
+/* === Meeting Schedule Script START === */
+const timings = [
+  { name: "Sunday School", day: "Sunday", time: "9:45 AM TO 10:30 AM" },
+  { name: "Sunday Worship", day: "Sunday", time: "10:30 AM TO 12:30 PM" },
+  { name: "Youth Meeting", day: "Sunday", time: "12:00 PM TO 1:00 PM (2nd Sunday)" },
+  { name: "Ladies Meeting", day: "Thursday", time: "7:00 PM TO 8:00 PM" },
+  { name: "Intercessory Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM" },
+  { name: "Fasting Prayer", day: "Friday", time: "7:00 PM TO 8:00 PM (1st Fri & Sat)" }
+];
+
+// Group events by day
+const grouped = {};
+timings.forEach(event => {
+  if (!grouped[event.day]) grouped[event.day] = [];
+  grouped[event.day].push(event);
+});
+
+// Weekly order
+const weeklyOrder = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const tableBody = document.getElementById("tableBody");
+const todayStatus = document.getElementById("todayStatus");
+
+// Current day
+const today = new Date();
+const dayName = today.toLocaleString("en-US", { weekday: "long" });
+
+let hasMeetingToday = false;
+
+// Insert rows by weekly order
+weeklyOrder.forEach(day => {
+  if (grouped[day]) {
+    // Day header row
+    const dayRow = document.createElement("tr");
+    dayRow.classList.add("day-header");
+    dayRow.innerHTML = `<td colspan="3">${day}</td>`;
+    tableBody.appendChild(dayRow);
+
+    // Events under this day
+    grouped[day].forEach(event => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${event.day}</td><td>${event.name}</td><td>${event.time}</td>`;
+
+      // Highlight today
+      if (event.day === dayName) {
+        row.classList.add("today-highlight");
+        hasMeetingToday = true;
+      }
+      tableBody.appendChild(row);
+    });
+  }
+});
+
+// Show status message
+todayStatus.textContent = hasMeetingToday
+  ? `✅ Yes, we have service(s) today (${dayName}).`
+  : `❌ No meetings scheduled today (${dayName}).`;
+/* === Meeting Schedule Script END === */
+</script>
+<!-- END JS MEETING SCHEDULE -->
+
+
+
+	
+		
+ <section class="slanted-section3" id="gal">
+  <div class="gallery-title">
+    <h2>GALLERY</h2>
+    <hr class="underline2">
+  </div>
+
+  <div class="card-container">
+    <div class="card" onclick="openFullscreen(0)">
+      <img src="image/Gallery-01.jpg" alt="Image 1">
+    </div>
+    <div class="card" onclick="openFullscreen(1)">
+      <img src="image/Gallery-02.jpg" alt="Image 2">
+    </div>
+    <div class="card" onclick="openFullscreen(2)">
+      <img src="image/Gallery-03.jpg" alt="Image 3">
+    </div>
+    <div class="card" onclick="openFullscreen(3)">
+      <img src="image/Gallery-04.jpg" alt="Image 4">
+    </div>
+  </div>
+</section>
+
+	
+	<!-- Full-Screen Image Viewer -->
+	
+<div id="fullscreenViewer" class="fullscreen" aria-hidden="true">
+  <span class="close-btn" onclick="closeFullscreen()" aria-label="Close">&times;</span>
+  <img id="fullscreenImg" src="" alt="Fullscreen Image">
+  <button class="prev-btn" onclick="changeImage(-1)" aria-label="Previous Image">&#10094;</button>
+  <button class="next-btn" onclick="changeImage(1)" aria-label="Next Image">&#10095;</button>
+</div>
+
+<script>
+const images = [
+  "image/Gallery-01.jpg",
+  "image/Gallery-02.jpg",
+  "image/Gallery-03.jpg",
+  "image/Gallery-04.jpg"
+];
+
+let currentIndex = 0;
+const fullscreenViewer = document.getElementById("fullscreenViewer");
+const fullscreenImg = document.getElementById("fullscreenImg");
+
+function openFullscreen(index) {
+  currentIndex = index;
+  fullscreenImg.src = images[currentIndex];
+  fullscreenViewer.style.display = "flex";
+  fullscreenViewer.setAttribute("aria-hidden", "false");
+}
+
+function closeFullscreen() {
+  fullscreenViewer.style.display = "none";
+  fullscreenViewer.setAttribute("aria-hidden", "true");
+}
+
+function changeImage(direction) {
+  currentIndex = (currentIndex + direction + images.length) % images.length;
+  fullscreenImg.src = images[currentIndex];
+}
+
+// ✅ Mobile swipe support
+let startX = 0;
+fullscreenViewer.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+}, {passive: true});
+
+fullscreenViewer.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > 50) { // minimum swipe distance
+    if (diff > 0) {
+      changeImage(1); // swipe left -> next
+    } else {
+      changeImage(-1); // swipe right -> previous
+    }
+  }
+});
+</script>
+
+
+	
+	
+	<!--Meet Pastor & His Team-->
+<section class="team" id="team">
+  <div class="title">
+    <h1>MEET OUR PASTOR & TEAM</h1>
+    <hr class="underline2">
+  </div>
+
+  <div class="team-container">
+    <!-- Pastor -->
+    <div class="team-card pastor">
+      <img src="image/Pr Aben Abraham.jpg" alt="Pr. Aben Abraham" class="team-img">
+      <h3>Pr. Aben Abraham</h3>
+      <p class="role">Pastor</p>
+    </div>
+
+    <!-- Worship & Youth -->
+    <div class="team-card"> 
+      <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
+      <h3>Br. Vinson Thomas</h3>
+      <p class="role">Praise & Worship Leader</p>
+      
+    </div>
+	
+    <!-- Musician -->
+    <div class="team-card">
+      <img src="image/Jeremy Aben.jpg" alt="Br. Jeremy Aben" class="team-img">
+      <h3>Br. Jeremy Aben</h3>
+      <p class="role">Keyboardist</p>
+    </div>
+	  
+   <!-- YPE -->
+   <div class="team-card">
+ 	<img src="image/Justy.jpg" alt="Sis. Justy Koshy" class="team-img">
+    <h3>Sis. Justy Koshy</h3>
+ 	<p class="role">Youth Fellowship (YPE) Lead</p>
+    </div>
+	  
+	<!-- Women’s Fellowship -->
+    <div class="team-card"> 
+      <img src="image/Sis. Rini John LM.jpg" alt="Sis. Rini John" class="team-img">
+      <h3>Sis. Rini John</h3>
+      <p class="role">Women’s Fellowship Lead</p>
+    </div>
+	</div>
+  </section>
+	
+<!-- END Pastor & Team Section -->
+
+
+<!--Sunday School Teachers-->	
+<section class="team2" id="team2">
+  <div class="title">
+    <h1>SUNDAY SCHOOL TEACHERS</h1>
+    <hr class="underline2">
+  </div>
+
+  <div class="team-container">
+    <!-- Headmaster -->
+    <div class="team-card headmaster">
+      <img src="image/Br. Vinson Thomas Coir.jpg" alt="Br. Vinson Thomas" class="team-img">
+      <h3>Br. Vinson Thomas</h3>
+      <p class="role">Sunday School Headmaster</p>
+    </div>	
+
+    <!-- Teacher 1 -->
+    <div class="team-card">
+      <img src="image/Justy.jpg" alt="Sis. Justy Koshy" class="team-img">
+      <h3>Sis. Justy Koshy</h3>
+      <p class="role">Sunday School Teacher</p>
+	    </div>	
+
+    <!-- Teacher 2 -->
+    <div class="team-card"> 
+      <img src="image/Rini.jpg" alt="Sis. Rini John" class="team-img">
+      <h3>Sis. Rini John</h3>
+      <p class="role">Sunday School Teacher</p>
+    </div>
+  </div>
+</section>
+<!-- END Sunday School Section -->
+
+
+<!-- CSS Styling -->
+<style>
+/* Section titles */
+.title h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.underline2 {
+  width: 80px;
+  height: 3px;
+  background: #444;
+  border: none;
+  margin: 10px auto 20px auto;
+  border-radius: 2px;
+}
+
+/* Team layout */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Cards */
+.team-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+}
+
+/* Special Highlight Styles */
+.headmaster {
+  border: 3px solid gold;
+}
+
+.headmaster::before {
+  content: "★ Headmaster";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: gold;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Pastor Highlight */
+.pastor {
+  border: 3px solid royalblue;
+}
+
+.pastor::before {
+  content: "★ Pastor";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: royalblue;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Images */
+.team-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Text */
+.team-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+}
+
+.role {
+  font-size: 14px;
+  color: #666;
+  margin: 3px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-img {
+    width: 140px;
+    height: 140px;
+  }
+  .team-card {
+    width: 180px;
+    padding: 15px;
+  }
+}
+</style>
+<!-- END CSS Styling -->
+
+
+
+	<div class="location">
+		<h1>OUR LOCATION</h1>
+			<div class="para">
+				<center><h2>Church of God in Raleigh (Malayalam Congregation)</h2></center>
+		    </div>
+		
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.5356050120604!2d-78.7838402!3d35.7867823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acf3af2ffe2fc5%3A0x5397500737b0a36d!2s201%20W%20Chatham%20St%2C%20Cary%2C%20NC%2027511%2C%20USA!5e0!3m2!1sen!2sin!4v1743949739224!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"> 
+		</iframe>
+	</div>
+	
+	
+	
+	
+	
+<footer id="cont">
+  <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+ <!-- LOGO ABOVE FOOTER -->
+<div class="footer-logo-section">
+  <img class="logo-glow" src="image/Title  3.svg" alt="Church of God Logo">
+</div>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
+    <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
+  </div>
+</footer>
+
+
+
+
+<style>
+ 
+/* ================== Logo Glow & Float ================== */
+.logo-glow {
+  width: 400px;  /* adjust size */
+  height: auto;
+  animation: gradientGlow 6s infinite alternate ease-in-out,
+             floatUpDown 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px #ff6a6a) drop-shadow(0 0 26px #ff6a6a);
+}
+
+/* Gradient Glow Keyframes */
+@keyframes gradientGlow {
+  0% { filter: drop-shadow(0 0 16px #ff6a6a) drop-shadow(0 0 26px #ff6a6a); }
+  25% { filter: drop-shadow(0 0 16px #f0e68c) drop-shadow(0 0 26px #f0e68c); }
+  50% { filter: drop-shadow(0 0 18px #6a5acd) drop-shadow(0 0 28px #6a5acd); }
+  75% { filter: drop-shadow(0 0 16px #40e0d0) drop-shadow(0 0 26px #40e0d0); }
+  100% { filter: drop-shadow(0 0 20px #ff69b4) drop-shadow(0 0 32px #ff69b4); }
+}
+
+/* Vertical Float Keyframes */
+@keyframes floatUpDown {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); } /* moves up slightly */
+  100% { transform: translateY(0px); }
+}
+
+/* ================== Footer Section ================== */
 footer {
-  background: #111;
+  background-color: #111;
   color: #eee;
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px 80px;
 }
 
-.logo-glow {
-  width: 260px;
-  animation: floatUpDown 4s ease-in-out infinite;
-}
-
-@keyframes floatUpDown {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .privacy-link {
   color: #4CAF50;
   text-decoration: none;
+  font-weight: 500;
 }
 
-/* ================= FLOATING CONTACT ================= */
-.floating-contact {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  z-index: 2000;
+.privacy-link:hover {
+  text-decoration: underline;
 }
 
-.floating-toggle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background: #25d366;
-  color: #fff;
-  font-size: 26px;
-  cursor: pointer;
+/* ================== Responsive ================== */
+@media (max-width: 1024px) {
+  .logo-glow { width: 320px; }
 }
 
-.contact-options {
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.contact-options.show {
-  display: flex;
-}
-
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  nav { display: none; }
-  .menu-icon { display: block; }
+  .logo-glow { width: 250px; }
 }
 
+@media (max-width: 480px) {
+  .logo-glow { width: 180px; }
+}
 </style>
-</head>
 
-<body>
+<!-- ===== FOOTER END ===== -->
 
-<header>
-  <a href="#"><img class="logo" src="image/Logo png 2.png" alt="Church of God Raleigh Logo"></a>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#meeting">Meetings</a>
-    <a href="#gal">Gallery</a>
-  </nav>
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-</header>
 
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about">About</a>
-  <a href="#meeting">Meetings</a>
-  <a href="#gal">Gallery</a>
-</div>
-
-<div class="marquee-container">
-  <div class="marquee-text">
-    Praise the Lord! Raleigh, North Carolina-യിൽ ദൈവത്തെ സത്യത്തിലും ആത്മാവിലും ആരാധിക്കുന്ന ഒരു കൂട്ടായ്മ.
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="content" id="about">
-  <div class="row">
-    <div class="col">
-      <h2>ABOUT US</h2>
-      <p>
-        Church of God in Raleigh is a Malayalam congregation committed to worship,
-        fellowship, and spiritual growth for all generations.
-      </p>
-      <a href="mailto:prayers@cograleigh.com" class="btn1">Send Prayer Request</a>
-    </div>
-    <div class="col">
-      <img src="image/ab-03.png" alt="Church gathering in Raleigh" class="raleigh">
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <img src="image/Title  3.svg" alt="Church of God Raleigh" class="logo-glow">
-  <p>© 2025 Church of God Raleigh – All Rights Reserved.</p>
-  <a href="cognc-privacy.html" class="privacy-link">Privacy Statement</a>
-</footer>
-
-<!-- FLOATING CONTACT -->
+<!-- ===== FLOATING CONTACT BUTTONS START ===== -->
 <div class="floating-contact">
-  <button class="floating-toggle" onclick="toggleContact()">✉️</button>
-  <div class="contact-options" id="contactOptions">
-    <a href="https://wa.me/19843085394" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="48">
+  <button class="floating-toggle" id="contactToggle" aria-label="Open contact options">✉️</button>
+  <div class="contact-options" id="contactOptions" aria-hidden="true">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/19843085394?text=Hi%20Church%20of%20God%20Raleigh,%20I%20would%20love%20to%20know%20more%20about%20your%20services%20🙏"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Icon" loading="lazy">
     </a>
-    <a href="mailto:churchofgodraleigh@gmail.com">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="48">
+    <!-- Email -->
+    <a href="mailto:churchofgodraleigh@gmail.com?subject=Connect%20with%20Church%20of%20God%20Raleigh&body=Hello%20Church%20of%20God%20Raleigh,%0D%0A%0D%0AI%20would%20like%20to%20connect%20with%20you."
+       aria-label="Send Email">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" loading="lazy">
     </a>
   </div>
 </div>
+
+<style>
+  /* Footer Styling */
+  footer {
+    background: #111;
+    color: #eee;
+    text-align: center;
+    padding: 40px 20px 80px; /* bottom padding prevents overlap */
+    position: relative;
+  }
+
+  .footer-content {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .footer-logo {
+    width: 160px;
+    margin-bottom: 15px;
+  }
+
+  footer hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 15px auto;
+    width: 70%;
+  }
+
+  .footercopy {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .priv {
+    font-size: 14px;
+    color: #25d366;
+    text-decoration: none;
+  }
+
+  .priv:hover {
+    text-decoration: underline;
+  }
+
+  /* Floating Contact Container */
+  .floating-contact {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 2000;
+  }
+
+  /* Toggle Button */
+  .floating-toggle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+
+  /* Contact Options */
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  .contact-options.show {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .contact-options a img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease-in-out;
+    background: #fff;
+    padding: 6px;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
 
 <script>
-function toggleMenu() {
-  document.getElementById("mobileNav").classList.toggle("show");
-}
+  (function () {
+    const toggleBtn = document.getElementById("contactToggle");
+    const contactOptions = document.getElementById("contactOptions");
+    let autoCloseTimer;
 
-function toggleContact() {
-  document.getElementById("contactOptions").classList.toggle("show");
-}
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = contactOptions.classList.toggle("show");
+      contactOptions.setAttribute("aria-hidden", !isOpen);
+
+      clearTimeout(autoCloseTimer);
+      if (isOpen) {
+        autoCloseTimer = setTimeout(() => {
+          contactOptions.classList.remove("show");
+          contactOptions.setAttribute("aria-hidden", "true");
+        }, 5000);
+      }
+    });
+  })();
 </script>
+<!-- ===== FLOATING CONTACT BUTTONS END ===== -->
 
+
+
+ 
+
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
