@@ -120,7 +120,28 @@ We provide <b>Sunday School classes</b>,  led by passionate teachers who share t
     <h3>Special Fasting Prayer</h3>
     <p>📅 26 – 31 January 2026</p>
     <p>⏰ Daily | 7:30 PM – 8:30 PM (US ET)</p>
-    <div id="countdown"></div>
+    <div id="countdown" class="countdown-box">
+  <div class="time-unit">
+    <span id="cd-days">00</span>
+    <small>Days</small>
+  </div>
+  <span class="colon">:</span>
+  <div class="time-unit">
+    <span id="cd-hours">00</span>
+    <small>Hours</small>
+  </div>
+  <span class="colon">:</span>
+  <div class="time-unit">
+    <span id="cd-mins">00</span>
+    <small>Min</small>
+  </div>
+  <span class="colon">:</span>
+  <div class="time-unit">
+    <span id="cd-secs">00</span>
+    <small>Sec</small>
+  </div>
+</div>
+
     <p>📍 Zoom Meeting</p>
     <p>Meeting ID: <b>336-436-5356</b></p>
    
@@ -1190,43 +1211,54 @@ footer {
 
 
 
- <script>
-/* ⏳ Countdown */
+<script>
 const startDate = new Date("January 26, 2026 19:30:00").getTime();
-const endDate = new Date("February 1, 2026 00:00:00").getTime();
+const endDate   = new Date("February 1, 2026 00:00:00").getTime();
 
-const countdown = document.getElementById("countdown");
+const cdDays  = document.getElementById("cd-days");
+const cdHours = document.getElementById("cd-hours");
+const cdMins  = document.getElementById("cd-mins");
+const cdSecs  = document.getElementById("cd-secs");
+const cdBox   = document.getElementById("countdown");
+
 const upcoming = document.getElementById("upcoming-jan-2026");
-const past = document.getElementById("past-jan-2026");
+const past     = document.getElementById("past-jan-2026");
 
-function updateEventState() {
+function updateCountdown() {
   const now = new Date().getTime();
 
-  /* After Jan 31 → move to Past Events */
+  /* AFTER EVENT */
   if (now >= endDate) {
     if (upcoming) upcoming.style.display = "none";
     if (past) past.style.display = "block";
+    cdBox.innerHTML = "✅ Event Completed";
     return;
   }
 
-  /* Countdown */
-  const diff = startDate - now;
-  if (diff <= 0) {
-    countdown.innerHTML = "🔥 Event is Live!";
+  /* EVENT LIVE */
+  if (now >= startDate) {
+    cdBox.innerHTML = "🔥 EVENT IS LIVE NOW!";
+    cdBox.classList.add("countdown-live");
     return;
   }
+
+  const diff = startDate - now;
 
   const d = Math.floor(diff / (1000 * 60 * 60 * 24));
   const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const m = Math.floor((diff / (1000 * 60)) % 60);
   const s = Math.floor((diff / 1000) % 60);
 
-  countdown.innerHTML = `Starts in ${d}d ${h}h ${m}m ${s}s`;
+  cdDays.textContent  = String(d).padStart(2, "0");
+  cdHours.textContent = String(h).padStart(2, "0");
+  cdMins.textContent  = String(m).padStart(2, "0");
+  cdSecs.textContent  = String(s).padStart(2, "0");
 }
 
-setInterval(updateEventState, 1000);
-updateEventState();
+setInterval(updateCountdown, 1000);
+updateCountdown();
 </script>
+
 
 <style>
 /* ================= EVENT CARD (FINAL) ================= */
@@ -1348,6 +1380,81 @@ updateEventState();
   cursor: zoom-in;
 }
 
+	/* ================= DIGITAL COUNTDOWN ================= */
+
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 14px 0;
+  padding: 12px;
+  background: linear-gradient(135deg, #AD2A0C, #ff5a36);
+  border-radius: 14px;
+  box-shadow: 0 0 18px rgba(255,90,54,0.8);
+  animation: glowPulse 1.6s infinite alternate;
+}
+
+/* Time blocks */
+.time-unit {
+  background: #000;
+  color: #00ffcc;
+  padding: 8px 10px;
+  border-radius: 10px;
+  min-width: 56px;
+  text-align: center;
+  box-shadow: inset 0 0 8px rgba(0,255,204,0.6);
+}
+
+.time-unit span {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  line-height: 1;
+}
+
+.time-unit small {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+/* Blinking colon */
+.colon {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  animation: blink 1s infinite;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+  from { box-shadow: 0 0 12px rgba(255,90,54,0.6); }
+  to   { box-shadow: 0 0 26px rgba(255,90,54,1); }
+}
+
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+/* 📱 Mobile */
+@media (max-width: 480px) {
+  .time-unit {
+    min-width: 46px;
+    padding: 6px;
+  }
+  .time-unit span {
+    font-size: 22px;
+  }
+}
+
+/* 🔥 LIVE STATE */
+.countdown-live {
+  background: #0a8f08 !important;
+  box-shadow: 0 0 22px rgba(0,255,0,0.9) !important;
+}
+
 </style>
 
 
@@ -1391,6 +1498,7 @@ document.getElementById("eventFullscreen")?.addEventListener("click", function (
 
 </body>
 </html>
+
 
 
 
